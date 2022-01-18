@@ -1,0 +1,125 @@
+<h2 id="find-and-replace-pattern">Find and Replace Pattern</h2>
+
+<p>Given a list of strings words and a string pattern, return a list of words[i] that match pattern. You may return the answer in any order.</p>
+
+<p>A word matches the pattern if there exists a permutation of letters p so that after replacing every letter x in the pattern with p(x), we get the desired word.</p>
+
+<p>Recall that a permutation of letters is a bijection from letters to letters: every letter maps to another letter, and no two letters map to the same letter.</p>
+
+<p>Example 1:</p>
+
+<p>Input: words = [“abc”,”deq”,”mee”,”aqq”,”dkd”,”ccc”], pattern = “abb”<br />
+Output: [“mee”,”aqq”]<br />
+Explanation: “mee” matches the pattern because there is a permutation {a -&gt; m, b -&gt; e, …}. 
+“ccc” does not match the pattern because {a -&gt; c, b -&gt; c, …} is not a permutation, since a and b map to the same letter.</p>
+
+<p>Example 2:</p>
+
+<p>Input: words = [“a”,”b”,”c”], pattern = “a” <br />
+Output: [“a”,”b”,”c”]</p>
+
+<h3 id="umpire">UMPIRE</h3>
+
+<p><strong>Test cases:</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>words =   [qnr, anr, nmr] 
+pattern = xnr 
+output = [ qnr, anr, nmr ]
+
+words = [] -&gt; X
+pattern = pq
+
+words = [p, f, b] -&gt; X
+pattern = ""
+
+words =   [ab, dg, pn] -&gt; X
+pattern = abc 
+
+words = [ASD, 990] -&gt; X 
+
+patter -&gt; 889 -&gt; X
+
+words = [abc, pqr] 
+patter = rrr
+output = [ ]
+
+words = ["abcde","meeme"]
+pattern = "abbab"
+</code></pre></div></div>
+
+<p><strong>Match and Plan:</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>abbab  
+    a:0,3
+    b:1,2,4
+
+meeme
+    m:0,3
+    e:1,2,4
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>helper<span class="o">(</span>string<span class="o">)</span>:
+    map <span class="o">=</span> <span class="o">{}</span>
+    res <span class="o">=</span> <span class="s2">""</span>
+    iterate string: i
+        <span class="k">if </span>string[i] <span class="k">in </span>map:
+            map[string]: ..i
+        <span class="k">else
+            </span>map[string]:i
+    
+    iterate string: s
+        res +<span class="o">=</span> map[s]
+    <span class="k">return </span>res
+    
+main<span class="o">()</span>
+    <span class="nv">result</span><span class="o">=[]</span>
+    pattern_encoded <span class="o">=</span> helper<span class="o">(</span>pattern<span class="o">)</span>
+    iterate words: word
+        word_pattern <span class="o">=</span> helper<span class="o">(</span>word<span class="o">)</span>
+        <span class="k">if </span>word_pattern <span class="o">==</span> pattern_encoded:
+            result: add - word
+    <span class="k">return </span>result
+</code></pre></div></div>
+
+<p><strong>Implement:</strong></p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Solution:
+    def helper<span class="o">(</span>self, string<span class="o">)</span>:
+        mapping <span class="o">=</span> dict<span class="o">()</span>
+        encoded_pattern <span class="o">=</span> <span class="s2">""</span>
+        <span class="k">for </span>i <span class="k">in </span>range<span class="o">(</span>len<span class="o">(</span>string<span class="o">))</span>:
+            <span class="k">if </span>string[i] <span class="k">in </span>mapping:
+                mapping[string[i]].append<span class="o">(</span>i<span class="o">)</span>
+            <span class="k">else</span>:
+                mapping[string[i]] <span class="o">=</span> <span class="o">[</span>i]
+        <span class="k">for </span>s <span class="k">in </span>string:
+            <span class="k">for </span>i <span class="k">in </span>mapping[s]:
+                encoded_pattern +<span class="o">=</span> str<span class="o">(</span>i<span class="o">)</span>
+        <span class="k">return </span>encoded_pattern
+        
+    def findAndReplacePattern<span class="o">(</span>self, words: List[str], pattern: str<span class="o">)</span> -&gt; List[str]:
+        result <span class="o">=</span> list<span class="o">()</span>
+        pattern_encoded <span class="o">=</span> self.helper<span class="o">(</span>pattern<span class="o">)</span>
+        <span class="k">for </span>word <span class="k">in </span>words:
+            word_encoded <span class="o">=</span> self.helper<span class="o">(</span>word<span class="o">)</span>
+            <span class="k">if </span>len<span class="o">(</span>word<span class="o">)</span> <span class="o">==</span> len<span class="o">(</span>pattern<span class="o">)</span> and word_encoded <span class="o">==</span> pattern_encoded:
+                result.append<span class="o">(</span>word<span class="o">)</span>
+        <span class="k">return </span>result
+</code></pre></div></div>
+
+<p><strong>Review and Evaluate:</strong></p>
+
+<p>Complexity :
+    Let N = length of words and  K = length of each word in words</p>
+<ul>
+  <li>Time complexity:
+    <ul>
+      <li>O(N*K)</li>
+    </ul>
+  </li>
+  <li>Space complexity:
+    <ul>
+      <li>O(N*K)</li>
+    </ul>
+  </li>
+</ul>
