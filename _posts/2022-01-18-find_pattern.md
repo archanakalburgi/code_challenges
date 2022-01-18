@@ -1,4 +1,12 @@
-## Find and Replace Pattern
+---
+toc: true
+badges: true
+layout: post
+description: Solution using hashmap 
+categories: [markdown]
+title: Find and Replace Pattern
+date: 2022-01-18
+---
 
 Given a list of strings words and a string pattern, return a list of words[i] that match pattern. You may return the answer in any order.
 
