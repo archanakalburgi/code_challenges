@@ -96,8 +96,19 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h3"><a href="#umpire">UMPIRE</a></li>
-</ul><p>Given a list of strings words and a string pattern, return a list of words[i] that match pattern. You may return the answer in any order.</p>
+<li class="toc-entry toc-h3"><a href="#problem-statements">Problem statements</a></li>
+<li class="toc-entry toc-h3"><a href="#solution-using-umpire">Solution using UMPIRE</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#test-cases">Test cases</a></li>
+<li class="toc-entry toc-h4"><a href="#match-and-plan">Match and Plan</a></li>
+<li class="toc-entry toc-h4"><a href="#implement">Implement</a></li>
+<li class="toc-entry toc-h4"><a href="#review-and-evaluate">Review and Evaluate</a></li>
+</ul>
+</li>
+</ul><h3 id="problem-statements">
+<a class="anchor" href="#problem-statements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Problem statements</h3>
+
+<p>Given a list of strings words and a string pattern, return a list of words[i] that match pattern. You may return the answer in any order.</p>
 
 <p>A word matches the pattern if there exists a permutation of letters p so that after replacing every letter x in the pattern with p(x), we get the desired word.</p>
 
@@ -115,10 +126,11 @@ Explanation: “mee” matches the pattern because there is a permutation {a -&g
 <p>Input: words = [“a”,”b”,”c”], pattern = “a” <br>
 Output: [“a”,”b”,”c”]</p>
 
-<h3 id="umpire">
-<a class="anchor" href="#umpire" aria-hidden="true"><span class="octicon octicon-link"></span></a>UMPIRE</h3>
+<h3 id="solution-using-umpire">
+<a class="anchor" href="#solution-using-umpire" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution using UMPIRE</h3>
 
-<p><strong>Test cases:</strong></p>
+<h4 id="test-cases">
+<a class="anchor" href="#test-cases" aria-hidden="true"><span class="octicon octicon-link"></span></a>Test cases</h4>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>words =   [qnr, anr, nmr] 
 pattern = xnr 
@@ -145,7 +157,8 @@ words = ["abcde","meeme"]
 pattern = "abbab"
 </code></pre></div></div>
 
-<p><strong>Match and Plan:</strong></p>
+<h4 id="match-and-plan">
+<a class="anchor" href="#match-and-plan" aria-hidden="true"><span class="octicon octicon-link"></span></a>Match and Plan</h4>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>abbab  
     a:0,3
@@ -179,7 +192,8 @@ main<span class="o">()</span>
     <span class="k">return </span>result
 </code></pre></div></div>
 
-<p><strong>Implement:</strong></p>
+<h4 id="implement">
+<a class="anchor" href="#implement" aria-hidden="true"><span class="octicon octicon-link"></span></a>Implement</h4>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Solution:
     def helper<span class="o">(</span>self, string<span class="o">)</span>:
@@ -205,7 +219,8 @@ main<span class="o">()</span>
         <span class="k">return </span>result
 </code></pre></div></div>
 
-<p><strong>Review and Evaluate:</strong></p>
+<h4 id="review-and-evaluate">
+<a class="anchor" href="#review-and-evaluate" aria-hidden="true"><span class="octicon octicon-link"></span></a>Review and Evaluate</h4>
 
 <p>Complexity :
     Let N = length of words and  K = length of each word in words</p>
