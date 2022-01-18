@@ -8,6 +8,8 @@ title: Find and Replace Pattern
 date: 2022-01-18
 ---
 
+### Problem statements
+
 Given a list of strings words and a string pattern, return a list of words[i] that match pattern. You may return the answer in any order.
 
 A word matches the pattern if there exists a permutation of letters p so that after replacing every letter x in the pattern with p(x), we get the desired word.
@@ -26,9 +28,9 @@ Example 2:
 Input: words = ["a","b","c"], pattern = "a" \
 Output: ["a","b","c"]
 
-### UMPIRE
+### Solution using UMPIRE
 
-**Test cases:**
+#### Test cases
 
     words =   [qnr, anr, nmr] 
     pattern = xnr 
@@ -55,7 +57,7 @@ Output: ["a","b","c"]
     pattern = "abbab"
 
 
-**Match and Plan:**
+#### Match and Plan
 
     abbab  
         a:0,3
@@ -90,7 +92,7 @@ main()
     return result
 ```
 
-**Implement:**
+#### Implement
 
 ```sh
 class Solution:
@@ -117,7 +119,7 @@ class Solution:
         return result
 ```
 
-**Review and Evaluate:**
+#### Review and Evaluate
 
 Complexity :
     Let N = length of words and  K = length of each word in words
