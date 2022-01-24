@@ -4,19 +4,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Back to Tuktuk | Coding challenges</title>
+<title>Walls and gates - omg to om! | Coding challenges</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Back to Tuktuk" />
+<meta property="og:title" content="Walls and gates - omg to om!" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Keeping my coding skills sharp." />
 <meta property="og:description" content="Keeping my coding skills sharp." />
-<link rel="canonical" href="https://archanakalburgi.github.io/code_challenges/_pages/back_to_tuktuk.html" />
-<meta property="og:url" content="https://archanakalburgi.github.io/code_challenges/_pages/back_to_tuktuk.html" />
+<link rel="canonical" href="https://archanakalburgi.github.io/code_challenges/2021/09/13/walls-and-gates2.html" />
+<meta property="og:url" content="https://archanakalburgi.github.io/code_challenges/2021/09/13/walls-and-gates2.html" />
 <meta property="og:site_name" content="Coding challenges" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-09-13T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Back to Tuktuk" />
+<meta property="twitter:title" content="Walls and gates - omg to om!" />
 <script type="application/ld+json">
-{"headline":"Back to Tuktuk","url":"https://archanakalburgi.github.io/code_challenges/_pages/back_to_tuktuk.html","@type":"WebPage","description":"Keeping my coding skills sharp.","@context":"https://schema.org"}</script>
+{"headline":"Walls and gates - omg to om!","url":"https://archanakalburgi.github.io/code_challenges/2021/09/13/walls-and-gates2.html","dateModified":"2021-09-13T00:00:00-05:00","datePublished":"2021-09-13T00:00:00-05:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://archanakalburgi.github.io/code_challenges/2021/09/13/walls-and-gates2.html"},"description":"Keeping my coding skills sharp.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/code_challenges/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://archanakalburgi.github.io/code_challenges/feed.xml" title="Coding challenges" /><link rel="shortcut icon" type="image/x-icon" href="/code_challenges/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -77,35 +79,93 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home"><h1 class="page-heading">Back to Tuktuk</h1><meta charset="utf-8" />
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-<title>Redirecting to Code Challenges Page...</title>
-<!-- <meta http-equiv="refresh" content="0; URL=https://xyz.github.io/" /> -->
-<meta http-equiv="refresh" content="2;url=https://archanakalburgi.github.io/tuktuk" />
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Walls and gates - omg to om!</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-09-13T00:00:00-05:00" itemprop="datePublished">
+        Sep 13, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
 
-<link rel="canonical" href="https://archanakalburgi.github.io/tuktuk" />
+    
 
-<div>Redirecting to Tuktuk home page...</div>
+    </header>
 
+  <div class="post-content e-content" itemprop="articleBody">
+    <p align="center">
+  <img width="500" height="300" src="/images/ogm_to_om.jpg" />
+</p>
 
+<p><a href="https://www.azenhut.com/2018/02/28/dogs-in-meditation/">image source</a></p>
 
-  
+<p>In my previous <a href="https://archanakalburgi.github.io/2021/09/11/walls-gates.html">blog post</a>, I implemented an O(omg) time complexity solution, well soon I discovered that the solution can be further optimized and the time complexity can be reduced from omg to om. OMG right!?</p>
 
-  <!-- Hide posts if front matter flag hide:true -->
-  
-  
+<p>What made the previous implementation’s time complexity omg?</p>
 
-  <!-- Sort posts by rank, then date -->
-  
-  
-  
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def wallsAndGates<span class="o">(</span>rooms<span class="o">)</span>:
+    <span class="k">for </span>row <span class="k">in </span>range<span class="o">(</span>len<span class="o">(</span>rooms<span class="o">))</span>:
+        <span class="k">for </span>column <span class="k">in </span>range<span class="o">(</span>len<span class="o">(</span>rooms[0]<span class="o">))</span>:
+            <span class="k">if </span>rooms[row][column] <span class="o">==</span> 0:
+                bfs<span class="o">(</span>row, column, rooms<span class="o">)</span>
+</code></pre></div></div>
 
+<p>BFS is called on every gate in the matrix</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if </span>rooms[row][column] <span class="o">==</span> 0:
+    bfs<span class="o">(</span>row, column, rooms<span class="o">)</span>
+</code></pre></div></div>
+<p>Even though the time complexity of BFS is O(om), calling it on every gate in the grid make the overall implementation an O(omg) solution<br />
+Instead of starting BFS on every gate, starting BFS from the first gate and updating the values of cells with the shortest distance will reduce the time complexity<br />
+This is how modified the previous implementation</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def valid_neighbors<span class="o">(</span>r,c,row,col<span class="o">)</span>:
+    valid <span class="o">=</span> <span class="o">[]</span>
+    neighbors <span class="o">=</span> <span class="o">[(</span>r,c-1<span class="o">)</span>,<span class="o">(</span>r,c+1<span class="o">)</span>,<span class="o">(</span>r-1,c<span class="o">)</span>,<span class="o">(</span>r+1,c<span class="o">)]</span>
+    <span class="k">for</span> <span class="o">(</span>nr,nc<span class="o">)</span> <span class="k">in </span>neighbors:
+        <span class="k">if </span>0 <span class="o">&gt;=</span> nr <span class="o">&gt;</span> row and 0 <span class="o">&gt;=</span> nc <span class="o">&gt;</span> col:
+            valid.append<span class="o">((</span>nr,nc<span class="o">))</span>
+    <span class="k">return </span>valid
+
+def bfs<span class="o">(</span>row,col,rooms<span class="o">)</span>:
+    queue <span class="o">=</span> <span class="o">[(</span>row, col, 0<span class="o">)]</span>
+    visited <span class="o">=</span> <span class="nb">set</span><span class="o">((</span>row,col<span class="o">))</span>
+    <span class="k">while </span>queue:
+        r,c,dist <span class="o">=</span> queue.pop<span class="o">(</span>0<span class="o">)</span>
+        <span class="k">for</span> <span class="o">(</span>nr, nc<span class="o">)</span> <span class="k">in </span>valid_neighbors<span class="o">(</span>r,c,rooms<span class="o">)</span>: 
+            <span class="k">if</span> <span class="o">(</span>nr,nc<span class="o">)</span> not <span class="k">in </span>visited:
+                <span class="k">if </span>rooms[nr][nc] <span class="o">&gt;</span> dist:
+                    rooms[nr][nc] <span class="o">=</span> dist+1
+                    queue.append<span class="o">((</span>nr,nc,dist+1<span class="o">))</span>
+                    visited.add<span class="o">((</span>nr,nc<span class="o">))</span>
+
+def wallsAndGates<span class="o">(</span>rooms<span class="o">)</span>:
+    ro <span class="o">=</span> len<span class="o">(</span>rooms<span class="o">)</span>
+    column <span class="o">=</span> len<span class="o">(</span>rooms[0]<span class="o">)</span>
  
-  
+    <span class="k">for </span>row <span class="k">in </span>range<span class="o">(</span>ro<span class="o">)</span>:
+        <span class="k">for </span>col <span class="k">in </span>range<span class="o">(</span>column<span class="o">)</span>:
+            <span class="k">if </span>rooms[row][col] <span class="o">==</span> 0:
+                bfs<span class="o">(</span>row,col,rooms<span class="o">)</span>
+</code></pre></div></div>
 
-   <!-- Assemble final sorted posts array -->
-  
-  </div>
+<ul>
+  <li>with this implementation, we are checking the cell once and update the value only if the current distance is smaller than the value in the cell.</li>
+  <li>what I found very delightful is that we do not have to worry about the 0 and -1 value in the cell, which represents a gate and a wall because 0 or -1 cannot be greater than the distance</li>
+  <li>the following condition in bfs() function will take care of the above</li>
+</ul>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if </span>rooms[nr][nc] <span class="o">&gt;</span> dist
+</code></pre></div></div>
+
+<p>Hope you find this post interesting!!</p>
+
+  </div><a class="u-url" href="/code_challenges/2021/09/13/walls-and-gates2.html" hidden></a>
+</article>
+
       </div>
     </main><style type="text/css">
 .div-content {

@@ -4,19 +4,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Back to Tuktuk | Coding challenges</title>
+<title>Validate subsequence | Coding challenges</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Back to Tuktuk" />
+<meta property="og:title" content="Validate subsequence" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Keeping my coding skills sharp." />
-<meta property="og:description" content="Keeping my coding skills sharp." />
-<link rel="canonical" href="https://archanakalburgi.github.io/code_challenges/_pages/back_to_tuktuk.html" />
-<meta property="og:url" content="https://archanakalburgi.github.io/code_challenges/_pages/back_to_tuktuk.html" />
+<meta name="description" content="Solving this problem helped me understand the order of techniques I can explore to arrive at the solution for an array problem." />
+<meta property="og:description" content="Solving this problem helped me understand the order of techniques I can explore to arrive at the solution for an array problem." />
+<link rel="canonical" href="https://archanakalburgi.github.io/code_challenges/2021/08/23/validate-subsequence.html" />
+<meta property="og:url" content="https://archanakalburgi.github.io/code_challenges/2021/08/23/validate-subsequence.html" />
 <meta property="og:site_name" content="Coding challenges" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-23T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Back to Tuktuk" />
+<meta property="twitter:title" content="Validate subsequence" />
 <script type="application/ld+json">
-{"headline":"Back to Tuktuk","url":"https://archanakalburgi.github.io/code_challenges/_pages/back_to_tuktuk.html","@type":"WebPage","description":"Keeping my coding skills sharp.","@context":"https://schema.org"}</script>
+{"headline":"Validate subsequence","url":"https://archanakalburgi.github.io/code_challenges/2021/08/23/validate-subsequence.html","dateModified":"2021-08-23T00:00:00-05:00","datePublished":"2021-08-23T00:00:00-05:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://archanakalburgi.github.io/code_challenges/2021/08/23/validate-subsequence.html"},"description":"Solving this problem helped me understand the order of techniques I can explore to arrive at the solution for an array problem.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/code_challenges/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://archanakalburgi.github.io/code_challenges/feed.xml" title="Coding challenges" /><link rel="shortcut icon" type="image/x-icon" href="/code_challenges/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -77,35 +79,167 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home"><h1 class="page-heading">Back to Tuktuk</h1><meta charset="utf-8" />
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-<title>Redirecting to Code Challenges Page...</title>
-<!-- <meta http-equiv="refresh" content="0; URL=https://xyz.github.io/" /> -->
-<meta http-equiv="refresh" content="2;url=https://archanakalburgi.github.io/tuktuk" />
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Validate subsequence</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-08-23T00:00:00-05:00" itemprop="datePublished">
+        Aug 23, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      2 min read
+    
+</span></p>
 
-<link rel="canonical" href="https://archanakalburgi.github.io/tuktuk" />
+    
 
-<div>Redirecting to Tuktuk home page...</div>
+    </header>
 
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Solving this problem helped me understand the order of techniques I can explore to arrive at the solution for an array problem.</p>
+<p align="center">
+    <img width="400" height="300" src="/images/vs-title.jpg" />
+</p>
 
+<h1 id="problem-statement">Problem statement</h1>
 
-  
+<p>Given two non-empty arrays of integers, write a function that determines whether the second array is a subsequence of the first one.</p>
 
-  <!-- Hide posts if front matter flag hide:true -->
-  
-  
+<p>A subsequence of an array is a set od numbers that aren’t necessarily adjacent in the array but that are in the same order as they appear in the array.</p>
 
-  <!-- Sort posts by rank, then date -->
-  
-  
-  
+<h1 id="understand">Understand</h1>
 
- 
-  
+<p>Input:</p>
+<ul>
+  <li>array = [1,2,3,4,5,6,7,8],</li>
+  <li>subsequence = [3,5,7]
+Output: true</li>
+</ul>
 
-   <!-- Assemble final sorted posts array -->
-  
-  </div>
+<p>Input:</p>
+<ul>
+  <li>array: [10,20,30,40,50]</li>
+  <li>subsequence: [40]
+Output: true</li>
+</ul>
+
+<p>Input:</p>
+<ul>
+  <li>array = [11,11,11,11]</li>
+  <li>subsequence: [12,13,14]
+Output: false</li>
+</ul>
+
+<p>Input:</p>
+<ul>
+  <li>array: [5,1,22,25,6,-1,8,10]</li>
+  <li>subsequence: [1,6,-1,-2]
+Output: false</li>
+</ul>
+
+<p>Input:</p>
+<ul>
+  <li>array: []</li>
+  <li>subsequence: [2,4,5]
+Output: Invalid case</li>
+</ul>
+
+<h1 id="match-and-plan">Match and Plan</h1>
+
+<p><strong>List</strong></p>
+<ul>
+  <li>iterate subsequence check for the numbers of subsequence are also present in input array and are in same order</li>
+  <li>O(n^2) solution</li>
+  <li>NOTE: with this plan, we cannot handle the duplicate numbers in the array of in the sequence</li>
+</ul>
+
+<p><strong>Linked List</strong></p>
+<ul>
+  <li>complicates the solution</li>
+</ul>
+
+<p><strong>Sets</strong></p>
+<ul>
+  <li>with sets we cannot:
+    <ul>
+      <li>handle the duplicate values</li>
+      <li>maintain the order of numbers</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Dictionaries</strong></p>
+<ul>
+  <li>iterate through sequence</li>
+  <li>build a hashmap,
+    <ul>
+      <li>if keys are numbers of the sequence and values are the index of the number in sequence
+        <ul>
+          <li>will fail in handling duplicate numbers</li>
+        </ul>
+      </li>
+      <li>if keys are the index of the numbers in the sequence and values are the numbers themselves
+        <ul>
+          <li>we won’t be able to check if a number in array is present in dictionary in constant time</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Techniques</strong></p>
+
+<ul>
+  <li>build an array of all the possible sequence of the input array</li>
+  <li>check if the given subsequence is present in the array of all the possible sequence of the input array</li>
+</ul>
+
+<p><strong>Pointers</strong>
+<em>with pointers we can compare two numbers in the array and condition their movement accordingly. Pointers can also optimize the solution by not taking extra space</em></p>
+
+<ul>
+  <li>initialize two index pointers to 0</li>
+  <li>let one index pointer point to the numbers in sequence and the other to the numbers in array</li>
+  <li>if array[array_index] == sequence[sequence_index], increment sequence_index to check the next number in the sequence</li>
+  <li>increment array_index regardless</li>
+  <li>return true of all the numbers in the sequence are covered</li>
+</ul>
+
+<h1 id="implement">Implement</h1>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def isValidSubsequence<span class="o">(</span>array, sequence<span class="o">)</span>:
+    arr_idx <span class="o">=</span> 0
+	seq_idx <span class="o">=</span> 0
+	
+	<span class="k">while </span>arr_idx &lt; len<span class="o">(</span>array<span class="o">)</span> and seq_idx &lt; len<span class="o">(</span>sequence<span class="o">)</span>: 
+		<span class="k">if </span>sequence[seq_idx] <span class="o">==</span> array[arr_idx]:
+			seq_idx +<span class="o">=</span> 1
+		arr_idx +<span class="o">=</span> 1
+	
+	<span class="k">return </span>seq_idx <span class="o">==</span> len<span class="o">(</span>sequence<span class="o">)</span>	
+</code></pre></div></div>
+
+<h1 id="review">Review</h1>
+
+<p>lets dry run the code with the following test case:<br />
+array = [1,2,3], sequence = [1,3]</p>
+
+<p align="center">
+    <img width="600" height="200" src="/images/vs.jpg" />
+</p>
+
+<h1 id="evaluate">Evaluate</h1>
+
+<p>Complexity:</p>
+<ul>
+  <li>time: O(n), where n = len(array)</li>
+  <li>space: O(1)</li>
+</ul>
+
+  </div><a class="u-url" href="/code_challenges/2021/08/23/validate-subsequence.html" hidden></a>
+</article>
+
       </div>
     </main><style type="text/css">
 .div-content {

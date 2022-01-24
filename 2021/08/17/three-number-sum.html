@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Three number sum | Coding challenges</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Three number sum" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Another example that shows the time and space complexity trade off" />
+<meta property="og:description" content="Another example that shows the time and space complexity trade off" />
+<link rel="canonical" href="https://archanakalburgi.github.io/code_challenges/2021/08/17/three-number-sum.html" />
+<meta property="og:url" content="https://archanakalburgi.github.io/code_challenges/2021/08/17/three-number-sum.html" />
+<meta property="og:site_name" content="Coding challenges" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-17T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Three number sum" />
+<script type="application/ld+json">
+{"headline":"Three number sum","url":"https://archanakalburgi.github.io/code_challenges/2021/08/17/three-number-sum.html","dateModified":"2021-08-17T00:00:00-05:00","datePublished":"2021-08-17T00:00:00-05:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://archanakalburgi.github.io/code_challenges/2021/08/17/three-number-sum.html"},"description":"Another example that shows the time and space complexity trade off","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/code_challenges/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://archanakalburgi.github.io/code_challenges/feed.xml" title="Coding challenges" /><link rel="shortcut icon" type="image/x-icon" href="/code_challenges/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><style>
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+  .site-title{
+    color: #006ad1;
+    font-family: 'Mochiy Pop One', sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+  }
+</style>
+<header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/code_challenges/">Coding challenges</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/code_challenges/about/">About Me</a><a class="page-link" href="/code_challenges/_pages/back_to_tuktuk.html">Back to Tuktuk</a><a class="page-link" href="/code_challenges/search/">Search</a><a class="page-link" href="/code_challenges/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Three number sum</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-08-17T00:00:00-05:00" itemprop="datePublished">
+        Aug 17, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Another example that shows the time and space complexity trade off</p>
+
+<p align="center">
+  <img width="400" height="300" src="/images/three_num_sum.jpg" />
+</p>
+
+<p><a href="https://www.datamation.com/?s=geek+%26+poke">image source</a></p>
+
+<h1 id="problem-statement">Problem statement</h1>
+
+<p>Write a function that takes in a non-empty array of distinct integers and an integer representing a target sum. The function should find all the triplets in the array that sum up to the target sum and return a two-dimensional array  of all these triplets. The numbers in each triplet should be ordered in ascending order, and the triplets themselves should be ordered in ascending order with respect to the numbers they hold.</p>
+
+<p>If no three numbers sum up to the target sum, the  function should return an empty array</p>
+
+<h1 id="understand">Understand</h1>
+
+<p>Input: array = [12,3,1,2,-6,5,-8,6], target = 0<br />
+Output: [[-8,2,6],[-8,3,5],[-8,1,5]]</p>
+
+<p>Input: array = [4,1,3], target = 8<br />
+Output: [[1,3,4]]</p>
+
+<p>Input: [1,4,2,3,1], target = 6<br />
+Output: [[1,1,4],[1,2,3]]</p>
+
+<p>Input: array = [4,1,3], target = 10<br />
+Output: []</p>
+
+<p>Input: [1,2], target = 5<br />
+Output: []</p>
+
+<h1 id="match-and-plan">Match and Plan</h1>
+
+<p><strong>List</strong></p>
+<ul>
+  <li>the first solution that comes to mind is iterating the list thrice to get the desired three numbers</li>
+  <li>
+    <p>we could do so in the following way</p>
+
+    <ul>
+      <li><strong>Plan</strong>
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  // result <span class="o">=</span> <span class="o">[]</span>
+  // <span class="k">for </span>i -&gt; 0-len<span class="o">(</span>array<span class="o">)</span>:
+      // <span class="k">for </span>i -&gt; i-len<span class="o">(</span>array<span class="o">)</span>:
+          //for k -&gt; j-len<span class="o">(</span>array<span class="o">)</span>:
+              <span class="k">if </span>array[i]+array[j]+array[k] <span class="o">==</span> targetSum
+                  result -&gt; <span class="nb">sort</span><span class="o">[</span>array[i], array[j],array[k]] 
+  // <span class="k">return </span><span class="nb">sort</span><span class="o">(</span>result<span class="o">)</span>
+</code></pre></div>        </div>
+        <ul>
+          <li>complexity
+            <ul>
+              <li>time: O(n<sup>3</sup>) + O(3 log(3)) + O(r log(r)) -&gt; O(n<sup>3</sup>), where n=len(array), r=len(result)</li>
+              <li>space: O(r), where r=len(result)</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Linked list</strong></p>
+<ul>
+  <li>linked will complicate the solution by increasing the time and space complexity</li>
+</ul>
+
+<p><strong>Hashmap</strong></p>
+
+<ul>
+  <li>while we are iterating the array we will check if targetSum - (array[i]+array[j]) is in the hashmap</li>
+  <li>targetSum - (array[i]+array[j]) is essentially the third number of the triplet</li>
+  <li>if present in hashmap, remember the sorted order of array[i], array[j] and targetSum-(array[i]+array[j]</li>
+  <li>if not present then map array[j] to array[i], targetSum - (array[i] + array[j])</li>
+  <li>
+    <p>we are essentially trying to sum two number of the array and looking if the third number through process</p>
+
+    <ul>
+      <li><strong>Plan</strong>
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  // result <span class="o">=</span> <span class="o">[]</span>
+  // <span class="k">for </span>i -&gt; 0-len<span class="o">(</span>array<span class="o">)</span>
+      // hashmap <span class="o">=</span> <span class="o">{}</span>
+      // <span class="k">for </span>j -&gt; i-len<span class="o">(</span>array<span class="o">)</span>
+          <span class="k">if </span>targetSum - <span class="o">(</span>array[i] + array[j]<span class="o">)</span> <span class="k">in </span>hashmap
+              result -&gt; <span class="nb">sort</span><span class="o">([</span>array[i],array[j],targetSum-<span class="o">(</span>array[i]+array[j]<span class="o">))</span>
+          <span class="k">else</span>:
+              hashmap[array[j]] -&gt; array[i],targetSum - <span class="o">(</span>array[i] + array[j]<span class="o">)</span>
+  // <span class="k">return </span><span class="nb">sort</span><span class="o">(</span>result<span class="o">)</span> 
+</code></pre></div>        </div>
+        <ul>
+          <li>complexity
+            <ul>
+              <li>time: O(n<sup>2</sup>) + O(3 log(3)) + O(r log(r)) -&gt; O(n<sup>2</sup>), where n=len(array), r=len(result)</li>
+              <li>space: O(r), where r=len(result)</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>making use of hashmap we have managed to reduce the time complexity from O(n<sup>3</sup>) to O(n<sup>2</sup>)</li>
+  <li>the above is implemented using hashmap</li>
+</ul>
+
+<p><strong>Sets</strong></p>
+
+<ul>
+  <li>there is not need to store hashmap[array[j]]:array[i],targetSum - (array[i] + array[j]), since we are only interested in knowing the third number of the triplet</li>
+  <li>to avoid storing the mapping we can use set which will give us a constant time look up while not consuming extra space 
+by just storing the numbers we have iterated through</li>
+</ul>
+
+<p><em>Exploring the techniques involved in traversing the array helped me arrive at the following plan</em></p>
+
+<p><strong>Technique</strong></p>
+
+<p><strong>Three pointer approach:</strong></p>
+
+<ul>
+  <li>idea behind using three pointers:
+    <ul>
+      <li>if we have a sorted array, we can place a <em>start</em> pointer on the number to the right of the current number and <em>end</em> pointer at the last number in the array</li>
+      <li>check if current number + array[start] + array[end] == targetSum</li>
+      <li>if start is incremented by 1 will increment the sum(current number + array[start] + array[end])</li>
+      <li>where as decrementing the end by 1 will reduce the sum(current number + array[start] + array[end])</li>
+      <li>
+        <p>with this information we can obtain the list of triplets ([current number, array[start], array[end]]) which sum up to the targetSum</p>
+      </li>
+      <li><strong>Plan</strong>
+        <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  // <span class="nb">sort </span>given array
+  // result <span class="o">=</span> <span class="o">[]</span>
+  // <span class="k">for</span>: i -&gt; 0-len<span class="o">(</span>array<span class="o">)</span><span class="nt">-2</span> 
+          start <span class="o">=</span> i+1
+          end <span class="o">=</span> len<span class="o">(</span>array<span class="o">)</span><span class="nt">-1</span>
+          <span class="k">while </span>start&lt;end:
+              current_sum <span class="o">=</span> array[i]+array[start]+array[end]
+              <span class="k">if </span>current_sum <span class="o">==</span> targetSum
+                  result.append<span class="o">([</span>array[i],array[start],array[end]]<span class="o">)</span>
+                  move pointers close to each other by increasing start by 1 and decreasing end by 1
+              <span class="k">if </span>current_sum &lt; targetSum
+                  move start pointer by increasing start by 1
+              <span class="k">if </span>current_sum <span class="o">&gt;</span> targetSum:
+                  move end pointer by decreasing end by 1
+  // <span class="k">return </span>result
+</code></pre></div>        </div>
+        <ul>
+          <li>complexity
+            <ul>
+              <li>time: O(n<sup>2</sup>), where n=len(array)</li>
+              <li>space: O(3n) -&gt; O(n), where n=len(array)</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="implementation-and-evaluate">Implementation and Evaluate</h1>
+
+<ul>
+  <li>let’s implement all the above discussed solutions</li>
+</ul>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def threeNumberSum<span class="o">(</span>array, targetSum<span class="o">)</span>:
+	result <span class="o">=</span> <span class="o">[]</span>
+    <span class="k">for </span>i <span class="k">in </span>range<span class="o">(</span>len<span class="o">(</span>array<span class="o">))</span>:
+		<span class="k">for </span>j <span class="k">in </span>range<span class="o">(</span>i+1,len<span class="o">(</span>array<span class="o">))</span>:
+			<span class="k">for </span>k <span class="k">in </span>range<span class="o">(</span>j+1,len<span class="o">(</span>array<span class="o">))</span>:
+				<span class="k">if </span>array[i] + array[j] + array[k] <span class="o">==</span> targetSum:
+					result.append<span class="o">(</span>sorted<span class="o">([</span>array[i],array[j],array[k]]<span class="o">))</span>
+    <span class="k">return </span>sorted<span class="o">(</span>result<span class="o">)</span>
+</code></pre></div></div>
+<ul>
+  <li>complexity
+    <ul>
+      <li>time: O(n<sup>3</sup>) + O(3 log(3)) + O(r log(r)) -&gt; O(n<sup>3</sup>), where n=len(array), r=len(result)</li>
+      <li>space: O(3n) -&gt; O(n), where n=len(array)</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def threeNumberSum<span class="o">(</span>array, targetSum<span class="o">)</span>:
+	result <span class="o">=</span> <span class="o">[]</span>
+	<span class="k">for </span>i <span class="k">in </span>range<span class="o">(</span>len<span class="o">(</span>array<span class="o">))</span>:
+		temp <span class="o">=</span> dict<span class="o">()</span>
+		<span class="k">for </span>j <span class="k">in </span>range<span class="o">(</span>i+1,len<span class="o">(</span>array<span class="o">))</span>:
+			<span class="k">if </span>targetSum - <span class="o">(</span>array[i] + array[j]<span class="o">)</span> <span class="k">in </span>temp:
+				result.append<span class="o">(</span>sorted<span class="o">((</span>array[i],array[j],targetSum - <span class="o">(</span>array[i] + array[j]<span class="o">))))</span>
+			<span class="k">else</span>:
+				temp[array[j]] <span class="o">=</span> array[i],targetSum - <span class="o">(</span>array[i] + array[j]<span class="o">)</span>
+	<span class="k">return </span>sorted<span class="o">(</span>result<span class="o">)</span>
+</code></pre></div></div>
+<ul>
+  <li>complexity
+    <ul>
+      <li>time: O(n<sup>2</sup>) + O(3 log(3)) + O(r log(r)) -&gt; O(n<sup>2</sup>), where n=len(array), r=len(result)</li>
+      <li>space: O(n+2) + O(n) -&gt; O(n), where n=len(array)</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def threeNumberSum<span class="o">(</span>array, targetSum<span class="o">)</span>:
+	result <span class="o">=</span> <span class="o">[]</span>
+	<span class="k">for </span>i <span class="k">in </span>range<span class="o">(</span>len<span class="o">(</span>array<span class="o">))</span>:
+		temp <span class="o">=</span> <span class="nb">set</span><span class="o">()</span> <span class="c"># s: O(n)</span>
+		<span class="k">for </span>j <span class="k">in </span>range<span class="o">(</span>i+1,len<span class="o">(</span>array<span class="o">))</span>:
+			<span class="k">if </span>targetSum-<span class="o">(</span>array[i]+array[j]<span class="o">)</span> <span class="k">in </span>temp:
+				result.append<span class="o">(</span>sorted<span class="o">([</span>array[i],array[j],targetSum-<span class="o">(</span>array[i]+array[j]<span class="o">)]))</span>
+			<span class="k">else</span>:
+				temp.add<span class="o">(</span>array[j]<span class="o">)</span> 
+    <span class="k">return </span>sorted<span class="o">(</span>result<span class="o">)</span>
+</code></pre></div></div>
+<ul>
+  <li>complexity
+    <ul>
+      <li>time: O(n<sup>2</sup>) + O(3 log(3)) + O(r log(r)) -&gt; O(n<sup>2</sup>), where n=len(array), r=len(result)</li>
+      <li>space: O(n) + O(3n) -&gt; O(n), where n=len(array)</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def threeNumberSum<span class="o">(</span>array, targetSum<span class="o">)</span>:
+	<span class="c"># three pointer approach</span>
+    array.sort<span class="o">()</span>
+	result <span class="o">=</span> <span class="o">[]</span>
+	<span class="k">for </span>i <span class="k">in </span>range<span class="o">(</span>len<span class="o">(</span>array<span class="o">)</span><span class="nt">-2</span><span class="o">)</span>:
+		start <span class="o">=</span> i+1
+		end <span class="o">=</span> len<span class="o">(</span>array<span class="o">)</span><span class="nt">-1</span>
+		<span class="k">while </span>start&lt;end:
+			current_sum <span class="o">=</span> array[i]+array[start]+array[end]
+			<span class="k">if </span>current_sum <span class="o">==</span> targetSum:
+				result.append<span class="o">([</span>array[i],array[start],array[end]]<span class="o">)</span>
+				start +<span class="o">=</span> 1
+				end -<span class="o">=</span> 1
+			<span class="k">elif </span>current_sum &lt; targetSum:
+				start +<span class="o">=</span> 1
+			<span class="k">elif </span>current_sum <span class="o">&gt;</span> targetSum:
+				end -<span class="o">=</span> 1
+	<span class="k">return </span>result
+</code></pre></div></div>
+<ul>
+  <li>complexity
+    <ul>
+      <li>time: O(n<sup>2</sup>), where n=len(array)</li>
+      <li>space: O(3n) -&gt; O(n), where n=len(array)</li>
+    </ul>
+  </li>
+</ul>
+
+
+  </div><a class="u-url" href="/code_challenges/2021/08/17/three-number-sum.html" hidden></a>
+</article>
+
+      </div>
+    </main><style type="text/css">
+.div-content {
+    background: linear-gradient(#B7E8EB,#fff);
+}
+</style>
+<div class="div-content">
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="100%" height="25vh" preserveAspectRatio="none" viewBox="0 0 1440 226"><g mask="url(&quot;#SvgjsMask1156&quot;)" fill="none"><path d="M1488 226L0 226 L0 80.26Q68.77 29.04, 120 97.81Q140.79 46.6, 192 67.39Q262.07 17.47, 312 87.54Q388.6 44.13, 432 120.73Q481.76 50.5, 552 100.26Q571.07 47.33, 624 66.4Q654.55 24.95, 696 55.51Q752.63 40.14, 768 96.77Q844.17 52.94, 888 129.11Q914.33 35.44, 1008 61.77Q1085.9 19.67, 1128 97.58Q1164.01 13.59, 1248 49.6Q1320.61 2.21, 1368 74.81Q1434.42 21.23, 1488 87.65z" fill="rgba(37, 70, 125, 1)"></path><path d="M1488 226L0 226 L0 139.63Q51.97 71.6, 120 123.57Q173.91 57.48, 240 111.39Q324.96 76.35, 360 161.31Q378.97 108.28, 432 127.25Q458.43 81.68, 504 108.11Q562.99 95.1, 576 154.09Q627.24 85.32, 696 136.56Q771.65 92.22, 816 167.87Q883.3 115.18, 936 182.48Q971.08 97.56, 1056 132.63Q1122.48 79.11, 1176 145.59Q1222.8 72.39, 1296 119.18Q1362.69 65.87, 1416 132.56Q1463.94 108.5, 1488 156.45z" fill="rgba(53, 108, 177, 1)"></path><path d="M1560 226L0 226 L0 207.84Q25.3 161.14, 72 186.45Q131.51 173.96, 144 233.48Q197.38 166.85, 264 220.23Q311.63 195.87, 336 243.5Q342.56 178.06, 408 184.61Q477.85 134.46, 528 204.31Q548.42 152.74, 600 173.16Q661.22 162.38, 672 223.6Q723.45 155.05, 792 206.5Q849.24 191.74, 864 248.98Q866.61 179.59, 936 182.2Q966.03 140.23, 1008 170.26Q1079.24 121.5, 1128 192.73Q1181.18 173.91, 1200 227.1Q1236.74 143.84, 1320 180.58Q1412.09 152.67, 1440 244.76Q1485.92 170.68, 1560 216.6z" fill="rgba(255, 255, 255, 1)"></path></g><defs><mask id="SvgjsMask1156"><rect width="1440" height="226" fill="#ffffff"></rect></mask></defs></svg>
+</div>
+<footer class="site-footer h-card">
+  <data class="u-url" href="/code_challenges/%20/"></data>
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+<!--         <p class="feed-subscribe">
+          <a href="/code_challenges/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/code_challenges/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p> -->
+      </div>
+      <div class="footer-col">
+        <p>Keeping my coding skills sharp.</p>
+      </div>
+    </div>
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/archanakalburgi" target="_blank" title="archanakalburgi"><svg class="svg-icon grey"><use xlink:href="/code_challenges/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/archanakalburgi" target="_blank" title="archanakalburgi"><svg class="svg-icon grey"><use xlink:href="/code_challenges/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+  </div>
+
+</footer>
+</body>
+
+</html>
