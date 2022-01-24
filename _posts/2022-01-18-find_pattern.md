@@ -1,6 +1,6 @@
 ---
 toc: true
-badges: true
+badges: false
 layout: post
 description: Solution using hashmap 
 categories: [markdown]
