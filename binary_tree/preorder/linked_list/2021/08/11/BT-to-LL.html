@@ -4,21 +4,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Validate subsequence | Coding challenges</title>
+<title>Binary tree to a linked list | Coding challenges</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Validate subsequence" />
+<meta property="og:title" content="Binary tree to a linked list" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Solving this problem helped me understand the order of techniques I can explore to arrive at the solution for an array problem." />
-<meta property="og:description" content="Solving this problem helped me understand the order of techniques I can explore to arrive at the solution for an array problem." />
-<link rel="canonical" href="https://archanakalburgi.github.io/code_challenges/2021/08/23/validate-subsequence.html" />
-<meta property="og:url" content="https://archanakalburgi.github.io/code_challenges/2021/08/23/validate-subsequence.html" />
+<meta name="description" content="I found this problem interesting because it combines the concept of linked list and binary tree traversal." />
+<meta property="og:description" content="I found this problem interesting because it combines the concept of linked list and binary tree traversal." />
+<link rel="canonical" href="https://archanakalburgi.github.io/code_challenges/binary_tree/preorder/linked_list/2021/08/11/BT-to-LL.html" />
+<meta property="og:url" content="https://archanakalburgi.github.io/code_challenges/binary_tree/preorder/linked_list/2021/08/11/BT-to-LL.html" />
 <meta property="og:site_name" content="Coding challenges" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-08-23T00:00:00-05:00" />
+<meta property="article:published_time" content="2021-08-11T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Validate subsequence" />
+<meta property="twitter:title" content="Binary tree to a linked list" />
 <script type="application/ld+json">
-{"url":"https://archanakalburgi.github.io/code_challenges/2021/08/23/validate-subsequence.html","@type":"BlogPosting","headline":"Validate subsequence","dateModified":"2021-08-23T00:00:00-05:00","datePublished":"2021-08-23T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://archanakalburgi.github.io/code_challenges/2021/08/23/validate-subsequence.html"},"description":"Solving this problem helped me understand the order of techniques I can explore to arrive at the solution for an array problem.","@context":"https://schema.org"}</script>
+{"url":"https://archanakalburgi.github.io/code_challenges/binary_tree/preorder/linked_list/2021/08/11/BT-to-LL.html","@type":"BlogPosting","headline":"Binary tree to a linked list","dateModified":"2021-08-11T00:00:00-05:00","datePublished":"2021-08-11T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://archanakalburgi.github.io/code_challenges/binary_tree/preorder/linked_list/2021/08/11/BT-to-LL.html"},"description":"I found this problem interesting because it combines the concept of linked list and binary tree traversal.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/code_challenges/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://archanakalburgi.github.io/code_challenges/feed.xml" title="Coding challenges" /><link rel="shortcut icon" type="image/x-icon" href="/code_challenges/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -82,8 +82,8 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Validate subsequence</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-08-23T00:00:00-05:00" itemprop="datePublished">
-        Aug 23, 2021
+    <h1 class="post-title p-name" itemprop="name headline">Binary tree to a linked list</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-08-11T00:00:00-05:00" itemprop="datePublished">
+        Aug 11, 2021
       </time>
        • <span class="read-time" title="Estimated read time">
     
@@ -93,151 +93,170 @@ window.onload = wrap_img;
 </span></p>
 
     
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/code_challenges/categories/#binary_tree">binary_tree</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/code_challenges/categories/#preorder">preorder</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/code_challenges/categories/#linked_list">linked_list</a>
+        
+      
+      </p>
+    
 
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>Solving this problem helped me understand the order of techniques I can explore to arrive at the solution for an array problem.</p>
+    <p>I found this problem interesting because it combines the concept of linked list and binary tree traversal.</p>
+
 <p align="center">
-    <img width="400" height="300" src="/images/vs-title.jpg" />
+  <img width="400" height="300" src="/images/binary_tree.jpg" />
 </p>
 
 <h1 id="problem-statement">Problem statement</h1>
 
-<p>Given two non-empty arrays of integers, write a function that determines whether the second array is a subsequence of the first one.</p>
+<p>Given the root of a binary tree, flatten the tree into a “linked list”:</p>
 
-<p>A subsequence of an array is a set od numbers that aren’t necessarily adjacent in the array but that are in the same order as they appear in the array.</p>
-
-<h1 id="understand">Understand</h1>
-
-<p>Input:</p>
 <ul>
-  <li>array = [1,2,3,4,5,6,7,8],</li>
-  <li>subsequence = [3,5,7]
-Output: true</li>
-</ul>
-
-<p>Input:</p>
-<ul>
-  <li>array: [10,20,30,40,50]</li>
-  <li>subsequence: [40]
-Output: true</li>
-</ul>
-
-<p>Input:</p>
-<ul>
-  <li>array = [11,11,11,11]</li>
-  <li>subsequence: [12,13,14]
-Output: false</li>
-</ul>
-
-<p>Input:</p>
-<ul>
-  <li>array: [5,1,22,25,6,-1,8,10]</li>
-  <li>subsequence: [1,6,-1,-2]
-Output: false</li>
-</ul>
-
-<p>Input:</p>
-<ul>
-  <li>array: []</li>
-  <li>subsequence: [2,4,5]
-Output: Invalid case</li>
-</ul>
-
-<h1 id="match-and-plan">Match and Plan</h1>
-
-<p><strong>List</strong></p>
-<ul>
-  <li>iterate subsequence check for the numbers of subsequence are also present in input array and are in same order</li>
-  <li>O(n^2) solution</li>
-  <li>NOTE: with this plan, we cannot handle the duplicate numbers in the array of in the sequence</li>
-</ul>
-
-<p><strong>Linked List</strong></p>
-<ul>
-  <li>complicates the solution</li>
-</ul>
-
-<p><strong>Sets</strong></p>
-<ul>
-  <li>with sets we cannot:
-    <ul>
-      <li>handle the duplicate values</li>
-      <li>maintain the order of numbers</li>
-    </ul>
+  <li>
+    <p>The “linked list” should use the same TreeNode class where the right child pointer points to the next node in the list and the left child pointer is always null.</p>
+  </li>
+  <li>
+    <p>The “linked list” should be in the same order as a pre-order traversal of the binary tree.</p>
   </li>
 </ul>
 
-<p><strong>Dictionaries</strong></p>
+<h1 id="understand">Understand</h1>
+
+<p>Example 1:</p>
+<div align="center">Input:</div>
+<p align="center">
+  <img width="300" height="300" src="/images/input1.jpg" />
+</p>
+
+<div align="center">Output:</div>
+<p align="center">
+  <img width="300" height="300" src="/images/output1.jpg" />
+</p>
+
+<p>Example 2:</p>
+<div align="center">Input:</div>
+<p align="center">
+  <img width="200" height="200" src="/images/input2.jpg" />
+</p>
+
+<div align="center">Output:</div>
+<p align="center">
+  <img width="200" height="200" src="/images/output2.jpg" />
+</p>
+
+<p>Example 3:</p>
+<div align="center">Input:</div>
+<p align="center">
+  <img width="200" height="200" src="/images/input3.jpg" />
+</p>
+
+<div align="center">Output:</div>
+<p align="center">
+  <img width="200" height="200" src="/images/output3.jpg" />
+</p>
+
+<h1 id="match">Match</h1>
+
+<p><strong>Lists</strong></p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// traverse tree:  
+    preorder.append<span class="o">(</span>nodes<span class="o">)</span>
+// traverse preorder:
+    build linked list
+</code></pre></div></div>
 <ul>
-  <li>iterate through sequence</li>
-  <li>build a hashmap,
+  <li>we could implement this algorithm using list</li>
+  <li>however this might not be the ideal solution since the linked list should use the same TreeNode class.</li>
+  <li>complexity
     <ul>
-      <li>if keys are numbers of the sequence and values are the index of the number in sequence
-        <ul>
-          <li>will fail in handling duplicate numbers</li>
-        </ul>
-      </li>
-      <li>if keys are the index of the numbers in the sequence and values are the numbers themselves
-        <ul>
-          <li>we won’t be able to check if a number in array is present in dictionary in constant time</li>
-        </ul>
-      </li>
+      <li>time: O(n) + O(n) ≈ O(n)</li>
+      <li>space: O(n) + O(n) ≈ O(n)</li>
     </ul>
   </li>
 </ul>
 
 <p><strong>Techniques</strong></p>
 
+<p>To solve a problem related to binary tree, it is a good idea to explore the techniques as well</p>
 <ul>
-  <li>build an array of all the possible sequence of the input array</li>
-  <li>check if the given subsequence is present in the array of all the possible sequence of the input array</li>
+  <li>two ways we could traverse a binary tree are BFS and DFS</li>
+  <li>since the linked list must be same as a pre-order traversal of the binary tree we need to traverse the tree in a pre-order traversal</li>
 </ul>
 
-<p><strong>Pointers</strong>
-<em>with pointers we can compare two numbers in the array and condition their movement accordingly. Pointers can also optimize the solution by not taking extra space</em></p>
+<h1 id="plan">Plan</h1>
 
 <ul>
-  <li>initialize two index pointers to 0</li>
-  <li>let one index pointer point to the numbers in sequence and the other to the numbers in array</li>
-  <li>if array[array_index] == sequence[sequence_index], increment sequence_index to check the next number in the sequence</li>
-  <li>increment array_index regardless</li>
-  <li>return true of all the numbers in the sequence are covered</li>
+  <li>we will have to process nodes in a pre-order fashion and rewire the tree such that each node’s left is pointing to null and right pointer points to the left child of the node</li>
+  <li>in order to traverse a tree DFS way, we have to traverse the entire branch of the tree and then the adjacent nodes</li>
+  <li>in order to keep track of the node to be processed next it requires last in first out approach which can be tracked using a stack</li>
+  <li>once the depth is reached the nodes are popped out of stack</li>
+  <li>in oder to do so we will initialize a stack, with it’s first entry being the root of the given binary tree</li>
+  <li>for every node,
+    <ul>
+      <li>if a node has a left child, make it null</li>
+      <li>make the node the new right child of the previous node</li>
+    </ul>
+  </li>
 </ul>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// initialize temp <span class="o">=</span> tree node
+// traverse tree iteratively
+    node <span class="o">=</span> root
+    temp.left_chid <span class="o">=</span> None 
+    temp.right_child <span class="o">=</span> node
+    temp <span class="o">=</span> temp.right_child
+</code></pre></div></div>
 
 <h1 id="implement">Implement</h1>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def isValidSubsequence<span class="o">(</span>array, sequence<span class="o">)</span>:
-    arr_idx <span class="o">=</span> 0
-	seq_idx <span class="o">=</span> 0
-	
-	<span class="k">while </span>arr_idx &lt; len<span class="o">(</span>array<span class="o">)</span> and seq_idx &lt; len<span class="o">(</span>sequence<span class="o">)</span>: 
-		<span class="k">if </span>sequence[seq_idx] <span class="o">==</span> array[arr_idx]:
-			seq_idx +<span class="o">=</span> 1
-		arr_idx +<span class="o">=</span> 1
-	
-	<span class="k">return </span>seq_idx <span class="o">==</span> len<span class="o">(</span>sequence<span class="o">)</span>	
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def flatten<span class="o">(</span>root: TreeNode<span class="o">)</span> -&gt; None:
+    <span class="k">if </span>root <span class="o">==</span> None:
+        <span class="k">return </span>None
+    
+    temp <span class="o">=</span> TreeNode<span class="o">()</span>
+    node_stack <span class="o">=</span> <span class="o">[</span>root]
+    
+    <span class="k">while </span>node_stack : 
+        node <span class="o">=</span> node_stack.pop<span class="o">()</span>
+        temp.left <span class="o">=</span> None
+        temp.right <span class="o">=</span> node 
+
+        <span class="k">if </span>node.right:
+            node_stack.append<span class="o">(</span>node.right<span class="o">)</span>
+        <span class="k">if </span>node.left:
+            node_stack.append<span class="o">(</span>node.left<span class="o">)</span>
+        temp <span class="o">=</span> temp.right
 </code></pre></div></div>
 
 <h1 id="review">Review</h1>
 
-<p>lets dry run the code with the following test case:<br />
-array = [1,2,3], sequence = [1,3]</p>
-
+<p>Consider the following input</p>
 <p align="center">
-    <img width="600" height="200" src="/images/vs.jpg" />
+  <img width="200" height="200" src="/images/rev_input.jpg" />
+</p>
+
+<p>Output would be</p>
+<p align="center">
+  <img width="200" height="200" src="/images/review_ouput.png" />
 </p>
 
 <h1 id="evaluate">Evaluate</h1>
 
 <p>Complexity:</p>
 <ul>
-  <li>time: O(n), where n = len(array)</li>
-  <li>space: O(1)</li>
+  <li>time: O(n)</li>
+  <li>space: O(n)</li>
 </ul>
 
-  </div><a class="u-url" href="/code_challenges/2021/08/23/validate-subsequence.html" hidden></a>
+  </div><a class="u-url" href="/code_challenges/binary_tree/preorder/linked_list/2021/08/11/BT-to-LL.html" hidden></a>
 </article>
 
       </div>

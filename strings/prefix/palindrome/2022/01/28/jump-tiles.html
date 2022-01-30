@@ -4,19 +4,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Back to Tuktuk | Coding challenges</title>
+<title>Can you jump all tiles | Coding challenges</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Back to Tuktuk" />
+<meta property="og:title" content="Can you jump all tiles" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Keeping my coding skills sharp." />
-<meta property="og:description" content="Keeping my coding skills sharp." />
-<link rel="canonical" href="https://archanakalburgi.github.io/code_challenges/_pages/back_to_tuktuk.html" />
-<meta property="og:url" content="https://archanakalburgi.github.io/code_challenges/_pages/back_to_tuktuk.html" />
+<meta name="description" content="Reconstruct string" />
+<meta property="og:description" content="Reconstruct string" />
+<link rel="canonical" href="https://archanakalburgi.github.io/code_challenges/strings/prefix/palindrome/2022/01/28/jump-tiles.html" />
+<meta property="og:url" content="https://archanakalburgi.github.io/code_challenges/strings/prefix/palindrome/2022/01/28/jump-tiles.html" />
 <meta property="og:site_name" content="Coding challenges" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-01-28T00:00:00-06:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Back to Tuktuk" />
+<meta property="twitter:title" content="Can you jump all tiles" />
 <script type="application/ld+json">
-{"url":"https://archanakalburgi.github.io/code_challenges/_pages/back_to_tuktuk.html","@type":"WebPage","headline":"Back to Tuktuk","description":"Keeping my coding skills sharp.","@context":"https://schema.org"}</script>
+{"url":"https://archanakalburgi.github.io/code_challenges/strings/prefix/palindrome/2022/01/28/jump-tiles.html","@type":"BlogPosting","headline":"Can you jump all tiles","dateModified":"2022-01-28T00:00:00-06:00","datePublished":"2022-01-28T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://archanakalburgi.github.io/code_challenges/strings/prefix/palindrome/2022/01/28/jump-tiles.html"},"description":"Reconstruct string","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/code_challenges/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://archanakalburgi.github.io/code_challenges/feed.xml" title="Coding challenges" /><link rel="shortcut icon" type="image/x-icon" href="/code_challenges/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -77,35 +79,91 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home"><h1 class="page-heading">Back to Tuktuk</h1><meta charset="utf-8" />
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-<title>Redirecting to Code Challenges Page...</title>
-<!-- <meta http-equiv="refresh" content="0; URL=https://xyz.github.io/" /> -->
-<meta http-equiv="refresh" content="2;url=https://archanakalburgi.github.io/tuktuk" />
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Can you jump all tiles</h1><p class="page-description">Reconstruct string</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-01-28T00:00:00-06:00" itemprop="datePublished">
+        Jan 28, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
 
-<link rel="canonical" href="https://archanakalburgi.github.io/tuktuk" />
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/code_challenges/categories/#strings">strings</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/code_challenges/categories/#prefix">prefix</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/code_challenges/categories/#palindrome">palindrome</a>
+        
+      
+      </p>
+    
 
-<div>Redirecting to Tuktuk home page...</div>
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h2 id="problem">Problem</h2>
+
+<p>You are given a string <em>s</em>. Consider the following algorithm applied to this string:</p>
+
+<ol>
+  <li>Take all the prefixes of the string, and choose the longest palindrome between them.</li>
+  <li>If this chosen prefix contains at least two characters, cut this prefix from <em>s</em> and go back to the first step with the updated string. Otherwise, end the algorithm with the current string <em>s</em> as a result.</li>
+</ol>
+
+<p>Your task is to implement the above algorithm and return its result when applied to string <em>s</em>.</p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p>For <em>s</em> = “aaacodedoc”, the output should be solution(<em>s</em>) = “ “.</p>
+
+<ul>
+  <li>The initial string <em>s</em> = “aaacodedoc” contains only three prefixes which are also palindromes - “a”, “aa”, “aaa” The longest one between them is “aaa” so we cut if from <em>s</em>.</li>
+  <li>Now we have string “codedoc”. It contains two prefixes which are also palindromes “c” and “codedoc”. The longest one between them is “codedoc”, so we cut if from the current string and obtain the empty string.</li>
+  <li>Finally the algorithm ends on the empty string, so the answer is</li>
+</ul>
+
+<h3 id="example-2">Example 2</h3>
+
+<p>For <em>s</em> = “codesignal” the output should be solution(<em>s</em>) = “codesignal”</p>
+
+<ul>
+  <li>The initial string <em>s</em> = “‘codesignal” contains the only prefix, which is also palindrome This prefix is the longest, but doesn’t contain two characters, so the algorithm ends with string “codesignal” as a result.</li>
+</ul>
+
+<h3 id="example-3">Example 3</h3>
+
+<p>For <em>s</em> = “ “, the output should be solution(<em>s</em>) = “ “.</p>
+
+<h2 id="inputoutput">Input/Output</h2>
+
+<p><strong>input  string <em>s</em></strong></p>
+<ul>
+  <li>A string consisting of English lowercase letters.</li>
+</ul>
+
+<p><em>Guaranteed constraints:</em> <br />
+0 ≤ <em>s</em>.length ≤ 1000</p>
+
+<p><strong>output string</strong></p>
+<ul>
+  <li>The result of the described algorithm.</li>
+</ul>
 
 
+  </div><a class="u-url" href="/code_challenges/strings/prefix/palindrome/2022/01/28/jump-tiles.html" hidden></a>
+</article>
 
-  
-
-  <!-- Hide posts if front matter flag hide:true -->
-  
-  
-
-  <!-- Sort posts by rank, then date -->
-  
-  
-  
-
- 
-  
-
-   <!-- Assemble final sorted posts array -->
-  
-  </div>
       </div>
     </main><style type="text/css">
 .div-content {

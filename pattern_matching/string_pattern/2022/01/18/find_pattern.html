@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Find and Replace Pattern | Coding challenges</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Find and Replace Pattern" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Solution using hashmap" />
+<meta property="og:description" content="Solution using hashmap" />
+<link rel="canonical" href="https://archanakalburgi.github.io/code_challenges/pattern_matching/string_pattern/2022/01/18/find_pattern.html" />
+<meta property="og:url" content="https://archanakalburgi.github.io/code_challenges/pattern_matching/string_pattern/2022/01/18/find_pattern.html" />
+<meta property="og:site_name" content="Coding challenges" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-01-18T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Find and Replace Pattern" />
+<script type="application/ld+json">
+{"url":"https://archanakalburgi.github.io/code_challenges/pattern_matching/string_pattern/2022/01/18/find_pattern.html","@type":"BlogPosting","headline":"Find and Replace Pattern","dateModified":"2022-01-18T00:00:00-06:00","datePublished":"2022-01-18T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://archanakalburgi.github.io/code_challenges/pattern_matching/string_pattern/2022/01/18/find_pattern.html"},"description":"Solution using hashmap","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/code_challenges/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://archanakalburgi.github.io/code_challenges/feed.xml" title="Coding challenges" /><link rel="shortcut icon" type="image/x-icon" href="/code_challenges/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><style>
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+  .site-title{
+    color: #006ad1;
+    font-family: 'Mochiy Pop One', sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+  }
+</style>
+<header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/code_challenges/">Coding challenges</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/code_challenges/about/">About Me</a><a class="page-link" href="/code_challenges/_pages/back_to_tuktuk.html">Back to Tuktuk</a><a class="page-link" href="/code_challenges/search/">Search</a><a class="page-link" href="/code_challenges/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Find and Replace Pattern</h1><p class="page-description">Solution using hashmap</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-01-18T00:00:00-06:00" itemprop="datePublished">
+        Jan 18, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      2 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/code_challenges/categories/#pattern_matching">pattern_matching</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/code_challenges/categories/#string_pattern">string_pattern</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h3"><a href="#problem-statements">Problem statements</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#solution-using-umpire">Solution using UMPIRE</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#test-cases">Test cases</a></li>
+<li class="toc-entry toc-h4"><a href="#match-and-plan">Match and Plan</a></li>
+<li class="toc-entry toc-h4"><a href="#implement">Implement</a></li>
+<li class="toc-entry toc-h4"><a href="#review-and-evaluate">Review and Evaluate</a></li>
+</ul>
+</li>
+</ul><h3 id="problem-statements">
+<a class="anchor" href="#problem-statements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Problem statements</h3>
+
+<p>Given a list of strings words and a string pattern, return a list of words[i] that match pattern. You may return the answer in any order.</p>
+
+<p>A word matches the pattern if there exists a permutation of letters p so that after replacing every letter x in the pattern with p(x), we get the desired word.</p>
+
+<p>Recall that a permutation of letters is a bijection from letters to letters: every letter maps to another letter, and no two letters map to the same letter.</p>
+
+<h4 id="examples">
+<a class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h4>
+
+<p>Example 1:</p>
+
+<p>Input: words = [“abc”,”deq”,”mee”,”aqq”,”dkd”,”ccc”], pattern = “abb”<br>
+Output: [“mee”,”aqq”]<br>
+Explanation: “mee” matches the pattern because there is a permutation {a -&gt; m, b -&gt; e, …}. 
+“ccc” does not match the pattern because {a -&gt; c, b -&gt; c, …} is not a permutation, since a and b map to the same letter.</p>
+
+<p>Example 2:</p>
+
+<p>Input: words = [“a”,”b”,”c”], pattern = “a” <br>
+Output: [“a”,”b”,”c”]</p>
+
+<h3 id="solution-using-umpire">
+<a class="anchor" href="#solution-using-umpire" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution using UMPIRE</h3>
+
+<h4 id="test-cases">
+<a class="anchor" href="#test-cases" aria-hidden="true"><span class="octicon octicon-link"></span></a>Test cases</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>words =   [qnr, anr, nmr] 
+pattern = xnr 
+output = [ qnr, anr, nmr ]
+
+words = [] -&gt; X
+pattern = pq
+
+words = [p, f, b] -&gt; X
+pattern = ""
+
+words =   [ab, dg, pn] -&gt; X
+pattern = abc 
+
+words = [ASD, 990] -&gt; X 
+
+patter -&gt; 889 -&gt; X
+
+words = [abc, pqr] 
+patter = rrr
+output = [ ]
+
+words = ["abcde","meeme"]
+pattern = "abbab"
+</code></pre></div></div>
+
+<h4 id="match-and-plan">
+<a class="anchor" href="#match-and-plan" aria-hidden="true"><span class="octicon octicon-link"></span></a>Match and Plan</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>abbab  
+    a:0,3
+    b:1,2,4
+
+meeme
+    m:0,3
+    e:1,2,4
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>helper<span class="o">(</span>string<span class="o">)</span>:
+    map <span class="o">=</span> <span class="o">{}</span>
+    res <span class="o">=</span> <span class="s2">""</span>
+    iterate string: i
+        <span class="k">if </span>string[i] <span class="k">in </span>map:
+            map[string]: ..i
+        <span class="k">else
+            </span>map[string]:i
+    
+    iterate string: s
+        res +<span class="o">=</span> map[s]
+    <span class="k">return </span>res
+    
+main<span class="o">()</span>
+    <span class="nv">result</span><span class="o">=[]</span>
+    pattern_encoded <span class="o">=</span> helper<span class="o">(</span>pattern<span class="o">)</span>
+    iterate words: word
+        word_pattern <span class="o">=</span> helper<span class="o">(</span>word<span class="o">)</span>
+        <span class="k">if </span>word_pattern <span class="o">==</span> pattern_encoded:
+            result: add - word
+    <span class="k">return </span>result
+</code></pre></div></div>
+
+<h4 id="implement">
+<a class="anchor" href="#implement" aria-hidden="true"><span class="octicon octicon-link"></span></a>Implement</h4>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Solution:
+    def helper<span class="o">(</span>self, string<span class="o">)</span>:
+        mapping <span class="o">=</span> dict<span class="o">()</span>
+        encoded_pattern <span class="o">=</span> <span class="s2">""</span>
+        <span class="k">for </span>i <span class="k">in </span>range<span class="o">(</span>len<span class="o">(</span>string<span class="o">))</span>:
+            <span class="k">if </span>string[i] <span class="k">in </span>mapping:
+                mapping[string[i]].append<span class="o">(</span>i<span class="o">)</span>
+            <span class="k">else</span>:
+                mapping[string[i]] <span class="o">=</span> <span class="o">[</span>i]
+        <span class="k">for </span>s <span class="k">in </span>string:
+            <span class="k">for </span>i <span class="k">in </span>mapping[s]:
+                encoded_pattern +<span class="o">=</span> str<span class="o">(</span>i<span class="o">)</span>
+        <span class="k">return </span>encoded_pattern
+        
+    def findAndReplacePattern<span class="o">(</span>self, words: List[str], pattern: str<span class="o">)</span> -&gt; List[str]:
+        result <span class="o">=</span> list<span class="o">()</span>
+        pattern_encoded <span class="o">=</span> self.helper<span class="o">(</span>pattern<span class="o">)</span>
+        <span class="k">for </span>word <span class="k">in </span>words:
+            word_encoded <span class="o">=</span> self.helper<span class="o">(</span>word<span class="o">)</span>
+            <span class="k">if </span>len<span class="o">(</span>word<span class="o">)</span> <span class="o">==</span> len<span class="o">(</span>pattern<span class="o">)</span> and word_encoded <span class="o">==</span> pattern_encoded:
+                result.append<span class="o">(</span>word<span class="o">)</span>
+        <span class="k">return </span>result
+</code></pre></div></div>
+
+<h4 id="review-and-evaluate">
+<a class="anchor" href="#review-and-evaluate" aria-hidden="true"><span class="octicon octicon-link"></span></a>Review and Evaluate</h4>
+
+<p>Complexity :
+    Let N = length of words and  K = length of each word in words</p>
+<ul>
+  <li>Time complexity:
+    <ul>
+      <li>O(N*K)</li>
+    </ul>
+  </li>
+  <li>Space complexity:
+    <ul>
+      <li>O(N*K)</li>
+    </ul>
+  </li>
+</ul>
+
+  </div><a class="u-url" href="/code_challenges/pattern_matching/string_pattern/2022/01/18/find_pattern.html" hidden></a>
+</article>
+
+      </div>
+    </main><style type="text/css">
+.div-content {
+    background: linear-gradient(#B7E8EB,#fff);
+}
+</style>
+<div class="div-content">
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="100%" height="25vh" preserveAspectRatio="none" viewBox="0 0 1440 226"><g mask="url(&quot;#SvgjsMask1156&quot;)" fill="none"><path d="M1488 226L0 226 L0 80.26Q68.77 29.04, 120 97.81Q140.79 46.6, 192 67.39Q262.07 17.47, 312 87.54Q388.6 44.13, 432 120.73Q481.76 50.5, 552 100.26Q571.07 47.33, 624 66.4Q654.55 24.95, 696 55.51Q752.63 40.14, 768 96.77Q844.17 52.94, 888 129.11Q914.33 35.44, 1008 61.77Q1085.9 19.67, 1128 97.58Q1164.01 13.59, 1248 49.6Q1320.61 2.21, 1368 74.81Q1434.42 21.23, 1488 87.65z" fill="rgba(37, 70, 125, 1)"></path><path d="M1488 226L0 226 L0 139.63Q51.97 71.6, 120 123.57Q173.91 57.48, 240 111.39Q324.96 76.35, 360 161.31Q378.97 108.28, 432 127.25Q458.43 81.68, 504 108.11Q562.99 95.1, 576 154.09Q627.24 85.32, 696 136.56Q771.65 92.22, 816 167.87Q883.3 115.18, 936 182.48Q971.08 97.56, 1056 132.63Q1122.48 79.11, 1176 145.59Q1222.8 72.39, 1296 119.18Q1362.69 65.87, 1416 132.56Q1463.94 108.5, 1488 156.45z" fill="rgba(53, 108, 177, 1)"></path><path d="M1560 226L0 226 L0 207.84Q25.3 161.14, 72 186.45Q131.51 173.96, 144 233.48Q197.38 166.85, 264 220.23Q311.63 195.87, 336 243.5Q342.56 178.06, 408 184.61Q477.85 134.46, 528 204.31Q548.42 152.74, 600 173.16Q661.22 162.38, 672 223.6Q723.45 155.05, 792 206.5Q849.24 191.74, 864 248.98Q866.61 179.59, 936 182.2Q966.03 140.23, 1008 170.26Q1079.24 121.5, 1128 192.73Q1181.18 173.91, 1200 227.1Q1236.74 143.84, 1320 180.58Q1412.09 152.67, 1440 244.76Q1485.92 170.68, 1560 216.6z" fill="rgba(255, 255, 255, 1)"></path></g><defs><mask id="SvgjsMask1156"><rect width="1440" height="226" fill="#ffffff"></rect></mask></defs></svg>
+</div>
+<footer class="site-footer h-card">
+  <data class="u-url" href="/code_challenges/%20/"></data>
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+<!--         <p class="feed-subscribe">
+          <a href="/code_challenges/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/code_challenges/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p> -->
+      </div>
+      <div class="footer-col">
+        <p>Keeping my coding skills sharp.</p>
+      </div>
+    </div>
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/archanakalburgi" target="_blank" title="archanakalburgi"><svg class="svg-icon grey"><use xlink:href="/code_challenges/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/archanakalburgi" target="_blank" title="archanakalburgi"><svg class="svg-icon grey"><use xlink:href="/code_challenges/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+  </div>
+
+</footer>
+</body>
+
+</html>
