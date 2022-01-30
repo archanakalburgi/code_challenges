@@ -1,4 +1,6 @@
 ---
+toc: false
+badges: true
 layout: post
 title: "Validate subsequence"
 date: 2021-08-23

@@ -1,7 +1,9 @@
 ---
+badges: true
 layout: post
 title: "Two number sum"
 date: 2021-08-16
+categories: [two_number_sum, array]
 ---
 
 Following is one of the many array questions and is a good example that shows the time and space complexity trade off 

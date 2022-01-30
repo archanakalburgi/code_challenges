@@ -3,7 +3,7 @@ toc: false
 badges: true
 layout: post
 description: Problem breakdown 
-categories: [markdown]
+categories: [array_construction]
 title: Calculate a boolean array 
 date: 2022-01-21
 ---

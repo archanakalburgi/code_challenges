@@ -1,7 +1,10 @@
 ---
+toc: false
+badges: true
 layout: post
 title: "Three number sum"
 date: 2021-08-17
+categories: [three_number_sum, array] 
 ---
 
 Another example that shows the time and space complexity trade off

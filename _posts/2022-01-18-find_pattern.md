@@ -3,7 +3,7 @@ toc: true
 badges: false
 layout: post
 description: Solution using hashmap 
-categories: [markdown]
+categories: [pattern_matching, string_pattern]
 title: Find and Replace Pattern
 date: 2022-01-18
 ---

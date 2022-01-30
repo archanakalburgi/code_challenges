@@ -1,7 +1,9 @@
 ---
+badges: true
 layout: post
 title: "Traverse a matrix to perform flood fill"
 date: 2021-08-15
+categories: [grid, graph, dfs, bfs]
 ---
 
 Solving the following problem helped me better understand how to traverse a matrix and how to get the valid neighbors of a cell in the matrix

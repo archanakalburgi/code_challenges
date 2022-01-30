@@ -1,7 +1,9 @@
 ---
+badges: true
 layout: post
 title: "Kth largest value of binary search tree"
 date: 2021-08-14
+categories: [bst, dfs, inorder]
 ---
 The following problem helped me understand that in-order traversal of a binary search tree yields a sorted array.
 <p align="center">

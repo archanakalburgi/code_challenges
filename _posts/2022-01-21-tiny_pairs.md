@@ -3,14 +3,14 @@ toc: false
 badges: true
 layout: post
 description: Problem breakdown 
-categories: [markdown]
+categories: [array, tiny_pairs]
 title: Number of tiny pairs 
 date: 2022-01-21
 ---
 
 ## Problem 
 
-You are given two arrays of integers and b of the same length, and an integer k. We will be iterating through array a from left to right, and simultaneously through array b from right to left, and looking at pairs (x, y) where x is from a and y is from b. Such pair iS called _tiny_ if the concatenation xy is strictly less than k
+You are given two arrays of integers and b of the same length, and an integer k. We will be iterating through array a from left to right, and simultaneously through array b from right to left, and looking at pairs (x, y) where x is from a and y is from b. Such pair is called _tiny_ if the concatenation xy is strictly less than k
 
 Your task is to return the number of tiny pairs that you'll encounter during the simultaneous iteration through a and b.
 

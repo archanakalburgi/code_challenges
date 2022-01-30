@@ -1,7 +1,9 @@
 ---
+badges: true
 layout: post
 title: "Walls and gates - Breadth first search"
 date: 2021-09-11
+categories: [bfs, optimal]
 ---
 
 <p align="center">

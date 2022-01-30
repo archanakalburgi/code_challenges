@@ -1,7 +1,9 @@
 ---
+badges: true
 layout: post
 title: "Find the town judge"
 date: 2021-08-05
+categories: [graph, in_degree, ]
 ---
 Here is an interesting problem that I enjoyed solving using UMPIRE method.
 
