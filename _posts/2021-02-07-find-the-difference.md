@@ -2,7 +2,7 @@
 toc: false
 badges: true
 layout: post
-description: Solution using two pointers 
+description: Solution using two hashmap 
 categories: [string, hashtable]
 title: Find the difference
 date: 2022-02-07
