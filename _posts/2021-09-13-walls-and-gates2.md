@@ -5,7 +5,6 @@ layout: post
 title: "Walls and gates - omg to om!"
 date: 2021-09-13 
 categories: [graph, bfs] 
-date: 2022-01-21
 ---
 
 <p align="center">
