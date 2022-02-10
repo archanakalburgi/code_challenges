@@ -20,7 +20,7 @@ Your task is to determine whether the new array b is sorted in strictly ascendin
 Here is how the process of generating the new array b works:
 
 <p align="center">
-  <img width="500" height="300" src="/images/array.jpg">
+  <img width="500" height="300" src="images/array.png">
 </p>
 
 ## Examples 
@@ -32,8 +32,8 @@ The new array b will look like [1, 2, 3, 4, 5, 6] , which is in strictly ascendi
 
 ### Example2:
 
-For a = (1, 4, 5, 6, 3] the output should be solution(a) = false\
-The new array b will look like (1, 3, 4, 6, 5] which is not in strictly ascending order, so the answer is false .
+For a = [1, 4, 5, 6, 3] the output should be solution(a) = false\
+The new array b will look like [1, 3, 4, 6, 5] which is not in strictly ascending order, so the answer is false .
 
 ## Solution
 
