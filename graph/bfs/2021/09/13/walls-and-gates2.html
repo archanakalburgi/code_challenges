@@ -4,21 +4,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Number of tiny pairs | Coding challenges</title>
+<title>Walls and gates - omg to om! | Coding challenges</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Number of tiny pairs" />
+<meta property="og:title" content="Walls and gates - omg to om!" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Problem breakdown" />
-<meta property="og:description" content="Problem breakdown" />
-<link rel="canonical" href="https://archanakalburgi.github.io/code_challenges/array/tiny_pairs/2022/01/21/tiny_pairs.html" />
-<meta property="og:url" content="https://archanakalburgi.github.io/code_challenges/array/tiny_pairs/2022/01/21/tiny_pairs.html" />
+<meta name="description" content="Keeping my coding skills sharp." />
+<meta property="og:description" content="Keeping my coding skills sharp." />
+<link rel="canonical" href="https://archanakalburgi.github.io/code_challenges/graph/bfs/2021/09/13/walls-and-gates2.html" />
+<meta property="og:url" content="https://archanakalburgi.github.io/code_challenges/graph/bfs/2021/09/13/walls-and-gates2.html" />
 <meta property="og:site_name" content="Coding challenges" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-01-21T00:00:00-06:00" />
+<meta property="article:published_time" content="2021-09-13T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Number of tiny pairs" />
+<meta property="twitter:title" content="Walls and gates - omg to om!" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-01-21T00:00:00-06:00","datePublished":"2022-01-21T00:00:00-06:00","description":"Problem breakdown","headline":"Number of tiny pairs","mainEntityOfPage":{"@type":"WebPage","@id":"https://archanakalburgi.github.io/code_challenges/array/tiny_pairs/2022/01/21/tiny_pairs.html"},"url":"https://archanakalburgi.github.io/code_challenges/array/tiny_pairs/2022/01/21/tiny_pairs.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-09-13T00:00:00-05:00","datePublished":"2021-09-13T00:00:00-05:00","description":"Keeping my coding skills sharp.","headline":"Walls and gates - omg to om!","mainEntityOfPage":{"@type":"WebPage","@id":"https://archanakalburgi.github.io/code_challenges/graph/bfs/2021/09/13/walls-and-gates2.html"},"url":"https://archanakalburgi.github.io/code_challenges/graph/bfs/2021/09/13/walls-and-gates2.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/code_challenges/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://archanakalburgi.github.io/code_challenges/feed.xml" title="Coding challenges" /><link rel="shortcut icon" type="image/x-icon" href="/code_challenges/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -82,23 +82,23 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Number of tiny pairs</h1><p class="page-description">Problem breakdown</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-01-21T00:00:00-06:00" itemprop="datePublished">
-        Jan 21, 2022
+    <h1 class="post-title p-name" itemprop="name headline">Walls and gates - omg to om!</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-09-13T00:00:00-05:00" itemprop="datePublished">
+        Sep 13, 2021
       </time>
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      1 min read
     
 </span></p>
 
     
       <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
       
-        <a class="category-tags-link" href="/code_challenges/categories/#array">array</a>
+        <a class="category-tags-link" href="/code_challenges/categories/#graph">graph</a>
         &nbsp;
       
-        <a class="category-tags-link" href="/code_challenges/categories/#tiny_pairs">tiny_pairs</a>
+        <a class="category-tags-link" href="/code_challenges/categories/#bfs">bfs</a>
         
       
       </p>
@@ -107,80 +107,73 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <h2 id="problem">Problem</h2>
+    <p align="center">
+  <img width="500" height="300" src="/images/ogm_to_om.jpg" />
+</p>
 
-<p>You are given two arrays of integers and b of the same length, and an integer k. We will be iterating through array a from left to right, and simultaneously through array b from right to left, and looking at pairs (x, y) where x is from a and y is from b. Such pair is called <em>tiny</em> if the concatenation xy is strictly less than k</p>
+<p><a href="https://www.azenhut.com/2018/02/28/dogs-in-meditation/">image source</a></p>
 
-<p>Your task is to return the number of tiny pairs that you’ll encounter during the simultaneous iteration through a and b.</p>
+<p>In my previous <a href="https://archanakalburgi.github.io/2021/09/11/walls-gates.html">blog post</a>, I implemented an O(omg) time complexity solution, well soon I discovered that the solution can be further optimized and the time complexity can be reduced from omg to om. OMG right!?</p>
 
-<h2 id="example">Example</h2>
+<p>What made the previous implementation’s time complexity omg?</p>
 
-<h3 id="example-1">Example 1</h3>
-
-<p>For [1, 2, 3] b = (1, 2, 3) and k = 31 , the output should be solution(a, b, k) = 2</p>
-
-<p>We’re considering the following pairs during iteration:</p>
-<ul>
-  <li>(1, 3) : Their concatenation equals 13, which is less than 31 SO the pair iS tiny;</li>
-  <li>(2 2)  : Their concatenation equals 22 , which is less than 31 so the IS pair is tiny;</li>
-  <li>(3, 1) : Their concatenation equals 31 which is not less than 31 so the pair is not tiny.</li>
-</ul>
-
-<p>As you can see, there are 2 tiny pairs during the iteration, so the answer is 2.</p>
-
-<h3 id="example-2">Example 2</h3>
-
-<p>For a[16, 14] , b = [7, 11, 2, 15] , and k = 743 , the output should be solution (a, b, k) = 4</p>
-
-<p>We’re considering the Following pairs during iteration:</p>
-<ul>
-  <li>(16, 15) : Their concatenation equals 1615 , which is greater than 743, so the pair is not tiny;</li>
-  <li>(1, 0) : Their concatenation equals 10 , which is less than 743, so the pair is tiny;</li>
-  <li>(4, 2) : Their concatenation equals 42 , which is less than 743, so the pair is tiny.</li>
-  <li>(2, 11) : Their concatenation equals 211 , which is less than 743, so the pair is tiny;</li>
-  <li>(14, 7) : Their concatenation equals 147 which is less than 743 , so the pair is tiny.</li>
-</ul>
-
-<p>There are 4 tiny pairs during the iteration. So the answer is 4</p>
-
-<h2 id="pseudocode">Pseudocode</h2>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fun <span class="o">(</span>a[i], b[j], k<span class="o">)</span>
-    str_a <span class="o">=</span> str<span class="o">(</span>a[i]<span class="o">)</span>
-    str_b <span class="o">=</span> srt<span class="o">(</span>b[i]<span class="o">)</span>
-    res_str <span class="o">=</span> str_a + str_b
-    <span class="k">return </span>int<span class="o">(</span>res_str<span class="o">)</span> &lt; k
-
-main<span class="o">()</span>
-    <span class="nv">i</span><span class="o">=</span>0, <span class="nv">j</span><span class="o">=</span>len <span class="o">(</span>b<span class="o">)</span> <span class="o">=</span>1
-    <span class="k">while </span>i&lt;len<span class="o">(</span>a<span class="o">)</span> and j&lt;<span class="o">=</span>0:
-        <span class="k">if </span>fun<span class="o">(</span>a[i], b[i], k<span class="o">)</span>:
-            count++
-        i+<span class="o">=</span>1, j-<span class="o">=</span>1
-    <span class="k">return </span>count
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def wallsAndGates<span class="o">(</span>rooms<span class="o">)</span>:
+    <span class="k">for </span>row <span class="k">in </span>range<span class="o">(</span>len<span class="o">(</span>rooms<span class="o">))</span>:
+        <span class="k">for </span>column <span class="k">in </span>range<span class="o">(</span>len<span class="o">(</span>rooms[0]<span class="o">))</span>:
+            <span class="k">if </span>rooms[row][column] <span class="o">==</span> 0:
+                bfs<span class="o">(</span>row, column, rooms<span class="o">)</span>
 </code></pre></div></div>
 
-<h2 id="implementation">Implementation</h2>
+<p>BFS is called on every gate in the matrix</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if </span>rooms[row][column] <span class="o">==</span> 0:
+    bfs<span class="o">(</span>row, column, rooms<span class="o">)</span>
+</code></pre></div></div>
+<p>Even though the time complexity of BFS is O(om), calling it on every gate in the grid make the overall implementation an O(omg) solution<br />
+Instead of starting BFS on every gate, starting BFS from the first gate and updating the values of cells with the shortest distance will reduce the time complexity<br />
+This is how modified the previous implementation</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def helper<span class="o">(</span>a, b, k<span class="o">)</span>:
-    str_a <span class="o">=</span> str<span class="o">(</span>a<span class="o">)</span>
-    str_b <span class="o">=</span> str<span class="o">(</span>b<span class="o">)</span>
-    res_str <span class="o">=</span> str_a + str_b
-    <span class="k">return </span>int<span class="o">(</span>res str<span class="o">)</span> &lt; k
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def valid_neighbors<span class="o">(</span>r,c,row,col<span class="o">)</span>:
+    valid <span class="o">=</span> <span class="o">[]</span>
+    neighbors <span class="o">=</span> <span class="o">[(</span>r,c-1<span class="o">)</span>,<span class="o">(</span>r,c+1<span class="o">)</span>,<span class="o">(</span>r-1,c<span class="o">)</span>,<span class="o">(</span>r+1,c<span class="o">)]</span>
+    <span class="k">for</span> <span class="o">(</span>nr,nc<span class="o">)</span> <span class="k">in </span>neighbors:
+        <span class="k">if </span>0 <span class="o">&gt;=</span> nr <span class="o">&gt;</span> row and 0 <span class="o">&gt;=</span> nc <span class="o">&gt;</span> col:
+            valid.append<span class="o">((</span>nr,nc<span class="o">))</span>
+    <span class="k">return </span>valid
 
-def solution<span class="o">(</span>a, b, k<span class="o">)</span>:
-    i <span class="o">=</span> 0
-    j <span class="o">=</span> len<span class="o">(</span>b<span class="o">)</span><span class="nt">-1</span>
-    count <span class="o">=</span> 0
-    <span class="k">while </span>i&lt;len<span class="o">(</span>a<span class="o">)</span> and j&gt;<span class="o">=</span>0:
-        <span class="k">if </span>helper<span class="o">(</span>a[i], b[j], k<span class="o">)</span>:
-            count <span class="o">=</span> count+1
-        i+<span class="o">=</span>1
-        j-<span class="o">=</span>1
-    <span class="k">return </span>count
+def bfs<span class="o">(</span>row,col,rooms<span class="o">)</span>:
+    queue <span class="o">=</span> <span class="o">[(</span>row, col, 0<span class="o">)]</span>
+    visited <span class="o">=</span> <span class="nb">set</span><span class="o">((</span>row,col<span class="o">))</span>
+    <span class="k">while </span>queue:
+        r,c,dist <span class="o">=</span> queue.pop<span class="o">(</span>0<span class="o">)</span>
+        <span class="k">for</span> <span class="o">(</span>nr, nc<span class="o">)</span> <span class="k">in </span>valid_neighbors<span class="o">(</span>r,c,rooms<span class="o">)</span>: 
+            <span class="k">if</span> <span class="o">(</span>nr,nc<span class="o">)</span> not <span class="k">in </span>visited:
+                <span class="k">if </span>rooms[nr][nc] <span class="o">&gt;</span> dist:
+                    rooms[nr][nc] <span class="o">=</span> dist+1
+                    queue.append<span class="o">((</span>nr,nc,dist+1<span class="o">))</span>
+                    visited.add<span class="o">((</span>nr,nc<span class="o">))</span>
+
+def wallsAndGates<span class="o">(</span>rooms<span class="o">)</span>:
+    ro <span class="o">=</span> len<span class="o">(</span>rooms<span class="o">)</span>
+    column <span class="o">=</span> len<span class="o">(</span>rooms[0]<span class="o">)</span>
+ 
+    <span class="k">for </span>row <span class="k">in </span>range<span class="o">(</span>ro<span class="o">)</span>:
+        <span class="k">for </span>col <span class="k">in </span>range<span class="o">(</span>column<span class="o">)</span>:
+            <span class="k">if </span>rooms[row][col] <span class="o">==</span> 0:
+                bfs<span class="o">(</span>row,col,rooms<span class="o">)</span>
 </code></pre></div></div>
 
-  </div><a class="u-url" href="/code_challenges/array/tiny_pairs/2022/01/21/tiny_pairs.html" hidden></a>
+<ul>
+  <li>with this implementation, we are checking the cell once and update the value only if the current distance is smaller than the value in the cell.</li>
+  <li>what I found very delightful is that we do not have to worry about the 0 and -1 value in the cell, which represents a gate and a wall because 0 or -1 cannot be greater than the distance</li>
+  <li>the following condition in bfs() function will take care of the above</li>
+</ul>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if </span>rooms[nr][nc] <span class="o">&gt;</span> dist
+</code></pre></div></div>
+
+<p>Hope you find this post interesting!!</p>
+
+  </div><a class="u-url" href="/code_challenges/graph/bfs/2021/09/13/walls-and-gates2.html" hidden></a>
 </article>
 
       </div>
