@@ -5,7 +5,7 @@ layout: post
 description: Sliding window problem, understanding invariance 
 categories: [sliding window, invariance, hashmap, array]
 title: Fruit Into Baskets
-date: 2022-01-18
+date: 2022-02-15
 ---
 
 ## Problem
