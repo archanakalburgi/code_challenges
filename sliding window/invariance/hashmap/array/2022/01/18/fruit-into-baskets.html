@@ -4,23 +4,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Page 2 of 2 for Coding challenges | Keeping my coding skills sharp.</title>
+<title>Fruit Into Baskets | Coding challenges</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Coding challenges" />
+<meta property="og:title" content="Fruit Into Baskets" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Keeping my coding skills sharp." />
-<meta property="og:description" content="Keeping my coding skills sharp." />
-<link rel="canonical" href="https://archanakalburgi.github.io/code_challenges/page2/" />
-<meta property="og:url" content="https://archanakalburgi.github.io/code_challenges/page2/" />
+<meta name="description" content="Sliding window problem, understanding invariance" />
+<meta property="og:description" content="Sliding window problem, understanding invariance" />
+<link rel="canonical" href="https://archanakalburgi.github.io/code_challenges/sliding%20window/invariance/hashmap/array/2022/01/18/fruit-into-baskets.html" />
+<meta property="og:url" content="https://archanakalburgi.github.io/code_challenges/sliding%20window/invariance/hashmap/array/2022/01/18/fruit-into-baskets.html" />
 <meta property="og:site_name" content="Coding challenges" />
-<meta property="og:image" content="https://archanakalburgi.github.io/code_challenges/images/logo.png" />
-<meta property="og:type" content="website" />
-<link rel="prev" href="https://archanakalburgi.github.io/code_challenges/" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://archanakalburgi.github.io/code_challenges/images/logo.png" />
-<meta property="twitter:title" content="Coding challenges" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-01-18T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Fruit Into Baskets" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Keeping my coding skills sharp.","headline":"Coding challenges","image":"https://archanakalburgi.github.io/code_challenges/images/logo.png","url":"https://archanakalburgi.github.io/code_challenges/page2/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-01-18T00:00:00-06:00","datePublished":"2022-01-18T00:00:00-06:00","description":"Sliding window problem, understanding invariance","headline":"Fruit Into Baskets","mainEntityOfPage":{"@type":"WebPage","@id":"https://archanakalburgi.github.io/code_challenges/sliding%20window/invariance/hashmap/array/2022/01/18/fruit-into-baskets.html"},"url":"https://archanakalburgi.github.io/code_challenges/sliding%20window/invariance/hashmap/array/2022/01/18/fruit-into-baskets.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/code_challenges/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://archanakalburgi.github.io/code_challenges/feed.xml" title="Coding challenges" /><link rel="shortcut icon" type="image/x-icon" href="/code_challenges/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -81,62 +79,118 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home"><!-- This site is built with [fastpages](https://github.com/fastai/fastpages), An easy to use blogging platform with extra features for Jupyter Notebooks.
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-![](/code_challenges/images/diagram.png "https://github.com/fastai/fastpages")
-
-[fastpages](https://github.com/fastai/fastpages) automates the process of creating blog posts via GitHub Actions, so you don't have to fuss with conversion scripts.  A full list of features can be found on [GitHub](https://github.com/fastai/fastpages).  
-
-You can edit the `index.html` file to change this content.
- -->
-<h1 id="posts">Posts</h1>
-
-
-
-  
-
-  <!-- Hide posts if front matter flag hide:true -->
-  
-  
-
-  <!-- Sort posts by rank, then date -->
-  
-  
-  
-
- 
-  
-
-   <!-- Assemble final sorted posts array -->
-  
-  <ul class="post-list"><li><div class="Box box-shadow-medium rounded-1 col-12"><div class="col-8 d-table-cell p-3">
-        <h3>
-          <a class="post-link" href="/code_challenges/binary_tree/preorder/linked_list/2021/08/11/BT-to-LL.html">
-            Binary tree to a linked list
-          </a>
-        </h3>
-        <p class="post-meta-description"></p>
-          <p class="post-meta">Aug 11, 2021</p>
-      </div>
-  </div></li><li><div class="Box box-shadow-medium rounded-1 col-12"><div class="col-8 d-table-cell p-3">
-        <h3>
-          <a class="post-link" href="/code_challenges/graph/in_degree/2021/08/05/find-the-town-judge.html">
-            Find the town judge
-          </a>
-        </h3>
-        <p class="post-meta-description"></p>
-          <p class="post-meta">Aug 5, 2021</p>
-      </div>
-  </div></li></ul>
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Fruit Into Baskets</h1><p class="page-description">Sliding window problem, understanding invariance</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-01-18T00:00:00-06:00" itemprop="datePublished">
+        Jan 18, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
 
     
-      <div class="pager">
-        <ul class="pagination">
-          <li><a href="/code_challenges/" class="previous-page">1</a></li>
-          <li><div class="current-page">2</div></li>
-          <li><div class="pager-edge">•</div></li>
-        </ul>
-      </div></div>
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/code_challenges/categories/#sliding window">sliding window</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/code_challenges/categories/#invariance">invariance</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/code_challenges/categories/#hashmap">hashmap</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/code_challenges/categories/#array">array</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h2 id="problem">Problem</h2>
+
+<p>You are visiting a farm that has a single row of fruit trees arranged from left to right. The trees are represented by an integer array fruits where fruits[i] is the <strong>type</strong> of fruit the i<sup>th</sup> tree produces.</p>
+
+<p>You want to collect as much fruit as possible. However, the owner has some strict rules that you must follow:</p>
+<ul>
+  <li>You only have <strong>two</strong> baskets, and each basket can only hold a <strong>single type</strong> of fruit. There is no limit on the amount of fruit each basket can hold.</li>
+  <li>Starting from any tree of your choice, you must pick <strong>exactly one fruit</strong> from <strong>every</strong> tree (including the start tree) while moving to the right. The picked fruits must fit in one of your baskets.</li>
+  <li>Once you reach a tree with fruit that cannot fit in your baskets, you must stop.</li>
+</ul>
+
+<p>Given the integer array fruits, return the <strong>maximum</strong> number of fruits you can pick.</p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example1">Example1</h3>
+
+<p><strong>Input :</strong> fruits = [1,2,1]<br />
+<strong>Output :</strong> 3<br />
+<strong>Explanation :</strong> We can pick from all 3 trees.</p>
+
+<h3 id="example2">Example2</h3>
+
+<p><strong>Input :</strong> fruits = [0,1,2,2]<br />
+<strong>Output :</strong> 3<br />
+<strong>Explanation :</strong> We can pick from trees [1,2,2].<br />
+If we had started at the first tree, we would only pick from trees [0,1].</p>
+
+<h3 id="example3">Example3</h3>
+
+<p><strong>Input :</strong> [1,2,3,2,2]<br />
+<strong>Output :</strong> 4<br />
+<strong>Explanation :</strong> We can pick from trees [2,3,2,2].<br />
+If we had started at the first tree, we would only pick from trees [1,2].</p>
+
+<h2 id="constraints">Constraints:</h2>
+<ul>
+  <li>1 &lt;= fruits. length &lt;= 10<sup>5</sup></li>
+  <li>0 &lt;= fruits[i] &lt; fruits.length</li>
+</ul>
+
+<h2 id="solution">Solution</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import collections
+
+class Solution:
+    def totalFruit<span class="o">(</span>self, fruits: List[int]<span class="o">)</span> -&gt; int:
+        
+        basket <span class="o">=</span> collections.defaultdict<span class="o">(</span>int<span class="o">)</span>
+        start <span class="o">=</span> 0
+        max_fruits <span class="o">=</span> 0
+        
+        <span class="k">for </span>i <span class="k">in </span>range<span class="o">(</span>len<span class="o">(</span>fruits<span class="o">))</span>:
+            basket[fruits[i]] +<span class="o">=</span> 1
+            
+            <span class="k">if </span>len<span class="o">(</span>basket<span class="o">)</span> <span class="o">&gt;</span> 2:
+                basket[fruits[start]] -<span class="o">=</span> 1
+                
+                <span class="k">if </span>basket[fruits[start]] <span class="o">==</span> 0:
+                    del basket[fruits[start]]
+                
+                start +<span class="o">=</span> 1
+            
+            max_fruits <span class="o">=</span> max<span class="o">(</span>max_fruits, <span class="o">(</span>i-start+1<span class="o">))</span>
+        
+        <span class="k">return </span>max_fruits 
+</code></pre></div></div>
+
+<h2 id="complexity">Complexity</h2>
+
+<ul>
+  <li><strong>Time :</strong> O(n)</li>
+  <li><strong>Space :</strong> O(1)</li>
+</ul>
+
+  </div><a class="u-url" href="/code_challenges/sliding%20window/invariance/hashmap/array/2022/01/18/fruit-into-baskets.html" hidden></a>
+</article>
+
       </div>
     </main><style type="text/css">
 .div-content {
