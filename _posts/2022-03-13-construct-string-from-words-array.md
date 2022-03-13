@@ -40,7 +40,8 @@ _Guaranteed constraints:_\
 1 ≤ arr.length ≤ 100 \
 1 ≤ arr[i].length < 100 
 
-**[execution time limit] 4 seconds (py3)**\
+**[execution time limit] 4 seconds (py3)**
+
 **[input] array string arr**
 
 An array of strings containing alphanumeric characters.
