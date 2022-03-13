@@ -109,7 +109,7 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <h2 id="problem-statement">Problem statement</h2>
 
-<p>You are given an array of strings <strong>arr</strong>. Your task is to construct a string from the words in <strong>arr</strong> starting with the **0<sup>th<sup>** character from each word (in the order they appear in <strong>arr</strong>), followed by the **1<sup>th<sup>** character, then the **2<sup>th<sup>** character, etc. If one of the words doesn’t have an **i<sup>th<sup>** character, skip that word.</sup></sup></sup></sup></sup></sup></sup></sup></p>
+<p>You are given an array of strings <strong>arr</strong>. Your task is to construct a string from the words in <strong>arr</strong> starting with the <strong>0<sup>th</sup></strong> character from each word (in the order they appear in <strong>arr</strong>), followed by the <strong>1<sup>th</sup></strong> character, then the <strong>2<sup>th</sup></strong> character, etc. If one of the words doesn’t have an <strong>i<sup>th</sup></strong> character, skip that word.</p>
 
 <p>Return the resulting string.</p>
 
@@ -119,12 +119,12 @@ window.onload = wrap_img;
   <li>For <strong>arr = [“Daisy”, “Rose”, “Hyacinth”, “Poppy”]</strong>, the output should be <strong>solution(arr) = “DRHPaoyoisapsecpyiynth”</strong></li>
 </ol>
 
-<p>First, we append all **0<sup>th<sup>** characters and obtain string <strong>“DRHP”</strong></sup></sup></p>
+<p>First, we append all <strong>0<sup>th</sup></strong> characters and obtain string <strong>“DRHP”</strong></p>
 <ul>
-  <li>Then we append all **1<sup>th<sup>** characters and obtain string <strong>“DRHPaoyo”</strong></sup></sup></li>
-  <li>Then we append all **2<sup>th<sup>** characters and obtain string <strong>“DRHPaoyoisap”</strong></sup></sup></li>
-  <li>Then we append all **3<sup>rd<sup>** characters and obtain string <strong>“DRHPaoyoisapaecp”</strong></sup></sup></li>
-  <li>Then we append all **4<sup>th<sup>** characters and obtain string <strong>“DRHPaoyoisapaecpyiy”</strong></sup></sup></li>
+  <li>Then we append all <strong>1<sup>th</sup></strong> characters and obtain string <strong>“DRHPaoyo”</strong></li>
+  <li>Then we append all <strong>2<sup>th</sup></strong> characters and obtain string <strong>“DRHPaoyoisap”</strong></li>
+  <li>Then we append all <strong>3<sup>rd</sup></strong> characters and obtain string <strong>“DRHPaoyoisapaecp”</strong></li>
+  <li>Then we append all <strong>4<sup>th</sup></strong> characters and obtain string <strong>“DRHPaoyoisapaecpyiy”</strong></li>
   <li>Finally, only letters in the <strong>arr[2]</strong> are left, so we append the rest characters and get <strong>“DRHPaoyoisapaecpyiynth”</strong></li>
 </ul>
 
@@ -132,7 +132,9 @@ window.onload = wrap_img;
   <li>For <strong>arr = [“E”, “M”, “I”, “L”, “Y”]</strong> the output should be <strong>solution(arr) “EMILY”</strong></li>
 </ol>
 
-<p>Since each of these strings have only one character, the answer will be concatenation of each string in order, so the answer is <strong>EMILY</strong></p>
+<ul>
+  <li>Since each of these strings have only one character, the answer will be concatenation of each string in order, so the answer is <strong>EMILY</strong></li>
+</ul>
 
 <h2 id="inputoutput">Input/Output</h2>
 
@@ -148,6 +150,8 @@ window.onload = wrap_img;
 <p><strong>[output] string</strong></p>
 
 <p>Return the resulting string.</p>
+
+<h2 id="implementation">Implementation</h2>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def helper<span class="o">(</span>arr, i, <span class="nv">temp</span><span class="o">=</span><span class="s2">""</span><span class="o">)</span>:
     <span class="k">for </span>word <span class="k">in </span>arr:
