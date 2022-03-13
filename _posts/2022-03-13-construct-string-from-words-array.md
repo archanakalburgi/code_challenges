@@ -24,7 +24,7 @@ First, we append all **0<sup>th</sup>** characters and obtain string **"DRHP"**
 - Then we append all **2<sup>th</sup>** characters and obtain string **"DRHPaoyoisap"**
 - Then we append all **3<sup>rd</sup>** characters and obtain string **"DRHPaoyoisapaecp"**
 - Then we append all **4<sup>th</sup>** characters and obtain string **"DRHPaoyoisapaecpyiy"**
-- Finally, only letters in the **arr[2]** are left, so we append the rest characters and get **"DRHPaoyoisapaecpyiynth"** 
+- Finally, only letters in the **arr[2]** are left, so we append the rest characters and get **"DRHPaoyoisapaecpyiynth"**\
 
 
 2. For **arr = ["E", "M", "I", "L", "Y"]** the output should be **solution(arr) "EMILY"**       
@@ -33,8 +33,8 @@ First, we append all **0<sup>th</sup>** characters and obtain string **"DRHP"**
 
 ## Input/Output
 
-_Guaranteed constraints:_
-1 ≤ arr.length ≤ 100 
+_Guaranteed constraints:_\
+1 ≤ arr.length ≤ 100 \
 1 ≤ arr[i].length < 100 
 
 **[execution time limit] 4 seconds (py3)**\
