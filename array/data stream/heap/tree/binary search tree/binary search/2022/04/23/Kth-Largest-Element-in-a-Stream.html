@@ -4,23 +4,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Page 2 of 2 for Coding challenges | Keeping my coding skills sharp.</title>
+<title>Kth Largest Element in a Stream | Coding challenges</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Coding challenges" />
+<meta property="og:title" content="Kth Largest Element in a Stream" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Keeping my coding skills sharp." />
-<meta property="og:description" content="Keeping my coding skills sharp." />
-<link rel="canonical" href="https://archanakalburgi.github.io/code_challenges/page2/" />
-<meta property="og:url" content="https://archanakalburgi.github.io/code_challenges/page2/" />
+<meta name="description" content="With O(n) time and space complexity" />
+<meta property="og:description" content="With O(n) time and space complexity" />
+<link rel="canonical" href="https://archanakalburgi.github.io/code_challenges/array/data%20stream/heap/tree/binary%20search%20tree/binary%20search/2022/04/23/Kth-Largest-Element-in-a-Stream.html" />
+<meta property="og:url" content="https://archanakalburgi.github.io/code_challenges/array/data%20stream/heap/tree/binary%20search%20tree/binary%20search/2022/04/23/Kth-Largest-Element-in-a-Stream.html" />
 <meta property="og:site_name" content="Coding challenges" />
-<meta property="og:image" content="https://archanakalburgi.github.io/code_challenges/images/logo.png" />
-<meta property="og:type" content="website" />
-<link rel="prev" href="https://archanakalburgi.github.io/code_challenges/" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://archanakalburgi.github.io/code_challenges/images/logo.png" />
-<meta property="twitter:title" content="Coding challenges" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-04-23T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Kth Largest Element in a Stream" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Keeping my coding skills sharp.","headline":"Coding challenges","image":"https://archanakalburgi.github.io/code_challenges/images/logo.png","url":"https://archanakalburgi.github.io/code_challenges/page2/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-04-23T00:00:00-05:00","datePublished":"2022-04-23T00:00:00-05:00","description":"With O(n) time and space complexity","headline":"Kth Largest Element in a Stream","mainEntityOfPage":{"@type":"WebPage","@id":"https://archanakalburgi.github.io/code_challenges/array/data%20stream/heap/tree/binary%20search%20tree/binary%20search/2022/04/23/Kth-Largest-Element-in-a-Stream.html"},"url":"https://archanakalburgi.github.io/code_challenges/array/data%20stream/heap/tree/binary%20search%20tree/binary%20search/2022/04/23/Kth-Largest-Element-in-a-Stream.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/code_challenges/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://archanakalburgi.github.io/code_challenges/feed.xml" title="Coding challenges" /><link rel="shortcut icon" type="image/x-icon" href="/code_challenges/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -81,80 +79,121 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home"><!-- This site is built with [fastpages](https://github.com/fastai/fastpages), An easy to use blogging platform with extra features for Jupyter Notebooks.
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-![](/code_challenges/images/diagram.png "https://github.com/fastai/fastpages")
-
-[fastpages](https://github.com/fastai/fastpages) automates the process of creating blog posts via GitHub Actions, so you don't have to fuss with conversion scripts.  A full list of features can be found on [GitHub](https://github.com/fastai/fastpages).  
-
-You can edit the `index.html` file to change this content.
- -->
-<h1 id="posts">Posts</h1>
-
-
-
-  
-
-  <!-- Hide posts if front matter flag hide:true -->
-  
-  
-
-  <!-- Sort posts by rank, then date -->
-  
-  
-  
-
- 
-  
-
-   <!-- Assemble final sorted posts array -->
-  
-  <ul class="post-list"><li><div class="Box box-shadow-medium rounded-1 col-12"><div class="col-8 d-table-cell p-3">
-        <h3>
-          <a class="post-link" href="/code_challenges/grid/graph/dfs/bfs/2021/08/15/flood-fill.html">
-            Traverse a matrix to perform flood fill
-          </a>
-        </h3>
-        <p class="post-meta-description"></p>
-          <p class="post-meta">Aug 15, 2021</p>
-      </div>
-  </div></li><li><div class="Box box-shadow-medium rounded-1 col-12"><div class="col-8 d-table-cell p-3">
-        <h3>
-          <a class="post-link" href="/code_challenges/bst/dfs/inorder/2021/08/14/kth-largest-in-bst.html">
-            Kth largest value of binary search tree
-          </a>
-        </h3>
-        <p class="post-meta-description"></p>
-          <p class="post-meta">Aug 14, 2021</p>
-      </div>
-  </div></li><li><div class="Box box-shadow-medium rounded-1 col-12"><div class="col-8 d-table-cell p-3">
-        <h3>
-          <a class="post-link" href="/code_challenges/binary_tree/preorder/linked_list/2021/08/11/BT-to-LL.html">
-            Binary tree to a linked list
-          </a>
-        </h3>
-        <p class="post-meta-description"></p>
-          <p class="post-meta">Aug 11, 2021</p>
-      </div>
-  </div></li><li><div class="Box box-shadow-medium rounded-1 col-12"><div class="col-8 d-table-cell p-3">
-        <h3>
-          <a class="post-link" href="/code_challenges/graph/in_degree/2021/08/05/find-the-town-judge.html">
-            Find the town judge
-          </a>
-        </h3>
-        <p class="post-meta-description"></p>
-          <p class="post-meta">Aug 5, 2021</p>
-      </div>
-  </div></li></ul>
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Kth Largest Element in a Stream</h1><p class="page-description">With O(n) time and space complexity</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-04-23T00:00:00-05:00" itemprop="datePublished">
+        Apr 23, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
 
     
-      <div class="pager">
-        <ul class="pagination">
-          <li><a href="/code_challenges/" class="previous-page">1</a></li>
-          <li><div class="current-page">2</div></li>
-          <li><div class="pager-edge">•</div></li>
-        </ul>
-      </div></div>
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/code_challenges/categories/#array">array</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/code_challenges/categories/#data stream">data stream</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/code_challenges/categories/#heap">heap</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/code_challenges/categories/#tree">tree</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/code_challenges/categories/#binary search tree">binary search tree</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/code_challenges/categories/#binary search">binary search</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h2 id="problem-statement">Problem statement</h2>
+
+<p>Design a class to find the k<sup>th</sup> largest element in a stream. Note that it is the k<sup>th</sup> largest element in the sorted order, not the k<sup>th</sup> distinct element.</p>
+
+<p>Implement KthLargest class:</p>
+<ul>
+  <li><strong>KthLargest(int k, int[ ] nums)</strong> Initializes the object with the integer k and the stream of integers nums</li>
+  <li><strong>int add (int val)</strong> Appends the integer val to the stream and returns the element representing the kth largest element in the stream.</li>
+</ul>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1</h3>
+
+<p><strong>Input</strong><br />
+[“KthLargest”, “add”, “add”, “add”, “add”, “add”]<br />
+[[3, [4, 5, 8, 2]], [3], [5], [10], [9], [4]]<br />
+<strong>Output</strong><br />
+[null, 4, 5, 5, 8, 8]</p>
+
+<p><strong>Explanation</strong><br />
+KthLargest kthLargest = new KthLargest (3, [4, 5, 8, 21]);<br />
+kthLargest.add(3); // return 4<br />
+kthLargest.add(5); / / return 5<br />
+kthLargest.add(10); // return 5<br />
+kthLargest.add(9); // return 8<br />
+kthLargest.add(4); // return 8</p>
+
+<p><strong>Constraints:</strong></p>
+<ul>
+  <li>1 &lt;= k &lt;= 10<sup>4</sup></li>
+  <li>0 &lt;= nums.length &lt;= 10<sup>4</sup></li>
+  <li>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></li>
+  <li>-10<sup>4</sup> &lt;= val &lt;= 10<sup>4</sup></li>
+  <li>At most 10<sup>4</sup> calls will be made to <em>add</em>.</li>
+  <li>It is guaranteed that there will be at least <em>k</em> elements in the array when you search for the <em>k<sup>th</sup></em> element.</li>
+</ul>
+
+<h2 id="implementation">Implementation</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import heapq 
+
+class KthLargest:
+
+    def __init__<span class="o">(</span>self, k, nums<span class="o">)</span>:
+        self.num <span class="o">=</span> nums
+        self.k <span class="o">=</span> k 
+        heapq.heapify<span class="o">(</span>self.num<span class="o">)</span> <span class="c"># O(n)</span>
+        <span class="k">while </span>len<span class="o">(</span>self.num<span class="o">)</span> <span class="o">&gt;</span> k:
+            heapq.heappop<span class="o">(</span>self.num<span class="o">)</span> 
+
+    def add<span class="o">(</span>self, val<span class="o">)</span>:
+        heapq.heappush<span class="o">(</span>self.num, val<span class="o">)</span>
+        <span class="k">if </span>len<span class="o">(</span>self.num<span class="o">)</span> <span class="o">&gt;</span> self.k: 
+            heapq.heappop<span class="o">(</span>self.num<span class="o">)</span> 
+        print<span class="o">(</span>self.num[0]<span class="o">)</span>
+        <span class="k">return </span>self.num[0] 
+
+kthLargest <span class="o">=</span> KthLargest<span class="o">(</span>3, <span class="o">[</span>4, 5, 8, 2]<span class="o">)</span>
+kthLargest.add<span class="o">(</span>3<span class="o">)</span> <span class="c">#   // return 4</span>
+kthLargest.add<span class="o">(</span>5<span class="o">)</span> <span class="c">#  // return 5</span>
+kthLargest.add<span class="o">(</span>10<span class="o">)</span><span class="c">#  // return 5</span>
+kthLargest.add<span class="o">(</span>9<span class="o">)</span> <span class="c">#   // return 8</span>
+kthLargest.add<span class="o">(</span>4<span class="o">)</span> <span class="c">#   // return 8</span>
+</code></pre></div></div>
+
+<h2 id="complexity">Complexity</h2>
+
+<p><strong>Time:</strong> O(n)<br />
+<strong>Time:</strong>O(n)<br />
+Where n in the length of the input array <em>nums</em>.s</p>
+
+  </div><a class="u-url" href="/code_challenges/array/data%20stream/heap/tree/binary%20search%20tree/binary%20search/2022/04/23/Kth-Largest-Element-in-a-Stream.html" hidden></a>
+</article>
+
       </div>
     </main><style type="text/css">
 .div-content {
